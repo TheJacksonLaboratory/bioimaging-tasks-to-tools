@@ -82,7 +82,9 @@ Deep learning (DL) approaches have made automated segmentation tractable for com
 ---
 
 ## Tracking cells and particles
-&nbsp;
+
+Tracking is an essential component of analyzing time-lapse studies. Essentially, it involves detecting and labeling objects, frame-by-frame, and then linking the objects between frames. This way, objects can be followed over time. It provides insight into dynamic processes, such as cell migration & cell fate, as well as organelle dynamics.  
+
 - [Fiji](#fiji) provides access to [TrackMate](https://imagej.net/plugins/trackmate/), a well-established standout in terms of object and particle tracking. It provides a wide range of tracking algorithms, including simple linking, as well as more complex algorithms like the Linear Assignment Problem (LAP) tracking. TrackMate can interface with a wide range of segmentation or spot detection algorithms, so it be used for tracking cells, particles, and other objects in 2D and 3D images of various modalities. It also provides track visualization and analysis tools. For a helpful guide to getting started with TrackMate, see this [Microcourse Youtube video](https://youtu.be/7HWtaikIFcs?t=2).  
 &nbsp;
 - [CellProfiler](#cellprofiler) includes a [TrackObjects](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/objectprocessing.html#trackobjects) module that can be used for tracking previously identified Objects over the course of a series of frames. It implements a number of different tracking methods, ranging from a simple overlap approach to LAP tracking. The module can provide a wide range of measurements, such as displacements, object lifetimes, and lineage information. For an example pipeline using TrackObjects, see the [CellProfiler Examples](https://cellprofiler.org/examples/).  
@@ -98,7 +100,7 @@ Deep learning (DL) approaches have made automated segmentation tractable for com
 ## Colocalization
 
 Colocalization aims to quantify the degree of overlap between two or more channels in an image, for example representing subcellular fluorescence markers. This can be done using a number of different metrics, such as Pearson's correlation coefficient or Manders' overlap coefficient. A good overview of these approaches can be found in [this review](https://journals.biologists.com/jcs/article/131/3/jcs211847/77151/Image-co-localization-co-occurrence-versus) and this [Microcourse Youtube video](https://www.youtube.com/watch?v=Mv4M1HaYdBc).  
-&nbsp;
+
 - [Fiji](#fiji) offers a number of [plugins for colocalization analysis](https://imagej.net/imaging/colocalization-analysis), however currently the best supported one is the [JACoP plugin revamped by BIOP](https://github.com/BIOP/ijp-jacop-b#ijp-jacop-b). It implements both Pearson's and Manders' coefficients, as well as Costes' automated thresholding.  
 &nbsp;
 - CellProfiler provides a [MeasureColocalization module](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/measurement.html#measurecolocalization) for colocalization analysis. The module can be used to calculate a wide range of metrics, such as Pearson's correlation coefficient, Manders' overlap coefficient, and Rank Weighted Colocalization coefficient. A helpful example/tutorial is provided on the [CellProfiler Examples page](https://cellprofiler.org/examples/).
