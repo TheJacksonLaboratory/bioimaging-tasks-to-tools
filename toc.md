@@ -19,7 +19,7 @@
 - ### [Fiji](#fiji)
 - ### [CellProfiler](#cellprofiler)
 - ### [QuPath](#qupath)
-- ### [OMERO.iviewer](#omeroiviewer)
+- ### [OMERO.iviewer](#omero.iviewer)
 - ### [napari](#napari)
 
 ---
