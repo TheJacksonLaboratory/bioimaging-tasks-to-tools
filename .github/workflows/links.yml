@@ -20,8 +20,8 @@ jobs:
         uses: lycheeverse/lychee-action@v2
 
       - name: Debug Exit Code
-        run: echo "Lychee exit code: ${{ steps.lychee.outputs.exit_code }}"
-
+        run: | 
+          echo "Lychee exit code: ${{ steps.lychee.outputs.exit_code }}"
 
       - name: Create Issue From File
         if: steps.lychee.outputs.exit_code != '0'
