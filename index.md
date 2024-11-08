@@ -162,3 +162,11 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 # Getting more help
 
 All of the above tools are part of the [image.sc community](https://forum.image.sc), which hosts varied discussions ranging from beginner questions to in-depth bug troubleshooting. In addition to posting questions or leading discussions, the effective `Search`, including `Advanced filters`, enables easy mining this rich resource.  Finally, [the Announcements board](https://forum.image.sc/c/announcements/10) is a great way to keep up with the latest bioimaging tool developments. 
+
+&nbsp;
+
+---
+
+&nbsp;
+
+[Back to the top](#common-tasks)
