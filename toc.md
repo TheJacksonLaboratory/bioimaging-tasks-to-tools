@@ -4,10 +4,10 @@
 - #### [2D](#2d) & [Large 2D](#large-2d)
 - #### [3D](#3d)
 
-### [Automated segmentation of regions of interest](#automated-segmentation-of-regions-of-interest-eg-cells-tissues)
+### [Automated segmentation of regions of interest](#automated-segmentation-of-regions-of-interest)
 - #### [Thresholding-based segmentation](#thresholding-based-segmentation)
 - #### [Segmentation using classification-based approaches](#segmentation-using-classification-based-approaches)
-- #### [Segmentation using deep learning (DL)](#segmentation-using-deep-learning-dl)
+- #### [Segmentation using deep learning (DL)](#segmentation-using-deep-learning)
 
 ### [Tracking](#tracking-cells-and-particles)
 
