@@ -39,8 +39,6 @@ Annotating 3D images can be challenging, because of the 2D screen and mouse. You
 
 ---
 
-&nbsp;
-
 ## Automated segmentation of regions of interest
 
 Segmentation involves breaking up an image into regions of interest (ROIs) based on pixel intensity values, texture, shape, etc. This can be done manually by annotating regoins, but automated segmentation is often preferred. Segmentation can be broadly divided into thresholding-based methods and machine learning-based methods. The former are based on pixel intensity values, while the latter can learn from a large number of features to distinguish between objects and background.
@@ -83,8 +81,6 @@ Deep learning (DL) approaches have made automated segmentation tractable for com
 
 ---
 
-&nbsp;
-
 ## Tracking cells and particles
 &nbsp;
 - [Fiji](#fiji) provides access to [TrackMate](https://imagej.net/plugins/trackmate/), a well-established standout in terms of object and particle tracking. It provides a wide range of tracking algorithms, including simple linking, as well as more complex algorithms like the Linear Assignment Problem (LAP) tracking. TrackMate can interface with a wide range of segmentation or spot detection algorithms, so it be used for tracking cells, particles, and other objects in 2D and 3D images of various modalities. It also provides track visualization and analysis tools. For a helpful guide to getting started with TrackMate, see this [Microcourse Youtube video](https://youtu.be/7HWtaikIFcs?t=2).  
@@ -99,8 +95,6 @@ Deep learning (DL) approaches have made automated segmentation tractable for com
 
 ---
 
-&nbsp;
-
 ## Colocalization
 
 Colocalization aims to quantify the degree of overlap between two or more channels in an image, for example representing subcellular fluorescence markers. This can be done using a number of different metrics, such as Pearson's correlation coefficient or Manders' overlap coefficient. A good overview of these approaches can be found in [this review](https://journals.biologists.com/jcs/article/131/3/jcs211847/77151/Image-co-localization-co-occurrence-versus) and this [Microcourse Youtube video](https://www.youtube.com/watch?v=Mv4M1HaYdBc).  
@@ -112,8 +106,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 &nbsp;
 
 ---
-
-&nbsp;
 
 # Most commonly used generalist tools
 
@@ -142,8 +134,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 
 ---
 
-&nbsp;
-
 # Commonly used specialized tools
 
 ## Cellpose
@@ -161,8 +151,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 &nbsp;
 
 ---
-
-&nbsp;
 
 
 # Finding more tools
