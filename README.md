@@ -9,3 +9,4 @@ Conversion to SharePoint:
 3. Paste the content into the Text web part in the SharePoint page.
 4. Select all of the text and use the `...` "more styles" menu to access `Line spacing`.
 5. Set the line spacing to `1.6` and then for `Paragraph spacing` add spacing both before and after.
+6. For each relative link to a tool, e.g. Fiji, fix the link to just be the anchor (`#fiji`) without the GitHub url.
