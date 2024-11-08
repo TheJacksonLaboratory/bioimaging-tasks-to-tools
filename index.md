@@ -166,8 +166,9 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 
 
 # Finding more tools
+
+- For a more in-depth curated, categorized listing of open source bioimage analysis tools, see this [`awesome` list](https://github.com/hallvaaw/awesome-biological-image-analysis#awesome-biological-image-analysis-).  
 &nbsp;
-- For a more in-depth curated, categorized listing of open source bioimage analysis tools, see this [`awesome` list](https://github.com/hallvaaw/awesome-biological-image-analysis#awesome-biological-image-analysis-).&nbsp;
 - The [BioImage Informatics Index (Biii)](https://biii.eu), also called "BISE" is a community-curated search engine for finding bioimage analysis software tools, workflows, and training materials. 
 
 # Getting more help
