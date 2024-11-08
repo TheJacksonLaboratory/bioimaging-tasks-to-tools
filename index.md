@@ -35,7 +35,6 @@ Annotating 3D images can be challenging, because of the 2D screen and mouse. You
 
 - [Paintera](#paintera) enables performant annotation of large 3D datasets, thanks to multiscale rendering. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes and handles multi-scale label datasets. This is particularly useful for labeling large, complex geometries, such as neurons. It is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See [this YouTube video](https://www.youtube.com/watch?v=ZDcK0aCLoRc) for an in-depth tutorial.
 
-&nbsp;
 ---
 &nbsp;
 
@@ -75,7 +74,6 @@ Deep learning approaches have made automated segmentation tractable for complex 
 
 - [StarDist](https://stardist.net) is a state-of-the-art DL algorithm developed for segmenting nuclei and other star-convex (blob-like) objects in 2D or 3D. Two pre-trained models for segmenting nuclei in 2D are readily available, one for fluorescence images and the other for H&E images. Training of models can be performed using Python API. StarDist does not have a dedicated GUI, however for inference, one can use StarDist models via plugins/extensions: [Fiji StarDist plugin](https://imagej.net/plugins/stardist), [QuPath StarDist extension](https://qupath.readthedocs.io/en/0.4/docs/deep/stardist.html), or [napari StarDist plugin](https://www.napari-hub.org/plugins/stardist-napari).
 
-&nbsp;
 ---
 &nbsp;
 
@@ -89,7 +87,6 @@ Deep learning approaches have made automated segmentation tractable for complex 
 
 - [ultrack](https://royerlab.github.io/ultrack/index.html) is a large-scale versatile cell tracking package that considers a set of multiple segmentation hypotheses and picks the segments that are most consistent over time, making it less susceptible to mistakes when traditional segmentation fails. it is available as a Python package that is also a [napari plugin](https://royerlab.github.io/ultrack/napari.html) with a GUI widget. Additionally, ultrack provides a [Fiji plugin](https://imagej.github.io/plugins/ultrack) which uses TrackMate for visualization.
 
-&nbsp;
 ---
 &nbsp;
 
@@ -101,7 +98,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 
 - CellProfiler provides a [MeasureColocalization module](https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/measurement.html#measurecolocalization) for colocalization analysis. The module can be used to calculate a wide range of metrics, such as Pearson's correlation coefficient, Manders' overlap coefficient, and Rank Weighted Colocalization coefficient. A helpful example/tutorial is provided on the [CellProfiler Examples page](https://cellprofiler.org/examples/).
 
-&nbsp;
 ---
 &nbsp;
 
@@ -128,7 +124,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 
 [napari](https://napari.org) is a Python image visualization and annotation application. While typically installed as a Python package, it does have [a bundled installation with a built-in Python environment](https://napari.org/stable/tutorials/fundamentals/installation_bundle_conda.html) on Linux, macOS, and Windows. napari provides a graphical user interface (GUI) for viewing n-dimensional data, such as images, as well as annotating with points, polygons, or labels. While napari does not include any built-in analysis tools, it seamlessly integrates with [the Scientific Python ecosystem](https://scientific-python.org/specs/core-projects/), as well as Python libraries, thanks to a built-in Python console and Python API. Further, it is [a robust ecosystem of plugins](https://www.napari-hub.org) that enable a wide range of file import, analysis (including machine learning), and annotation functions. For an overview of its capabilities, see the [Volume Imaging Australia webinar (Oct. 2024) by Juan Nunez-Iglesias](https://www.youtube.com/watch?v=Hi_MaWrb28o).
 
-&nbsp;
 ---
 &nbsp;
 
@@ -146,7 +141,6 @@ Colocalization aims to quantify the degree of overlap between two or more channe
 
 [Paintera](https://github.com/saalfeldlab/paintera) is a dedicated annotation tool that was designed for performant annotation of large 3D datasets, thanks to multiscale rendering. It provides orthogonal views but also permits painting planes of structures that are not aligned with the actual imaging planes, such as neurons. It is possible to easily fill contours to quickly annotate areas and, importantly, annotations in multiple slices can be interpolated into 3D volumetric annotations. Finally, it can generate 3D meshes of labels to aid with visualization. For an in-depth video tutorial, see [this YouTube video](https://www.youtube.com/watch?v=ZDcK0aCLoRc).
 
-&nbsp;
 ---
 &nbsp;
 
