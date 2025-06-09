@@ -1,4 +1,4 @@
-name: \U0001F4DA New content request
+name: "\U0001F4DA New content request"
 description: Suggest a new analysis task, tool, or other content for the guide
 labels: enhancement
 body:

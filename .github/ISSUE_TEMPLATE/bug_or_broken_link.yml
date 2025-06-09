@@ -1,4 +1,4 @@
-name: \U0001F41B Bug, Broken Link, or Outdated Content
+name: "\U0001F41B Bug, Broken Link, or Outdated Content"
 description: Report a bug, broken link, or outdated content in the guide
 labels: bug
 body:
