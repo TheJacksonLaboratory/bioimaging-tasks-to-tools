@@ -1,19 +1,12 @@
 name: Feature Request (New Task or Tool)
-about: Suggest a new feature, such as a new analysis task or a new tool to add to the guide
-labels: [enhancement]
+description: Suggest a new analysis task, tool, or other feature for the guide
+labels: enhancement
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Feature Request: New Task or Tool
-        Use this template to request a new analysis task, a new tool, or another feature for the guide.
-
   - type: input
     id: feature-title
     attributes:
       label: Title
       description: Short title for your feature request
-      placeholder: e.g., Add DeepCell as a segmentation tool
     validations:
       required: true
 
@@ -21,8 +14,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Describe the new task, tool, or feature you would like to see added. Please include as much detail as possible, including relevant links if available.
-      placeholder: Describe the new task, tool, or feature here.
+      description: Describe the new task, tool, or feature you would like to see added. Include relevant links if available.
     validations:
       required: true
 
@@ -31,7 +23,6 @@ body:
     attributes:
       label: Motivation
       description: Why is this feature important? How will it help users?
-      placeholder: Explain the motivation for this request
     validations:
       required: false
 
@@ -40,6 +31,5 @@ body:
     attributes:
       label: References or Links (optional)
       description: Add any relevant references, documentation, or links here.
-      placeholder: Paste links or references
     validations:
       required: false

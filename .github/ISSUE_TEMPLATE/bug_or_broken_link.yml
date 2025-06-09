@@ -1,19 +1,12 @@
 name: Bug, Broken Link, or Outdated Content
-about: Report a bug, broken link, or outdated content in the bioimage analysis tasks-to-tools guide
-labels: [bug]
+description: Report a bug, broken link, or outdated content in the guide
+labels: bug
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Bug, Broken Link, or Outdated Content
-        Please use this template to report a bug, a broken link, or content that is outdated or incorrect.
-
   - type: input
     id: page
     attributes:
       label: Page or Section
-      description: Which page or section is affected? (e.g., manual_annotation.md, or a specific heading)
-      placeholder: e.g., manual_annotation.md#2d
+      description: Which page or section is affected? (e.g., manual_annotation.md#2d)
     validations:
       required: true
 
@@ -21,8 +14,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Describe the issue in detail. If it's a broken link, please paste the link. If it's outdated content, explain what is wrong or missing.
-      placeholder: Describe the bug, broken link, or outdated content here.
+      description: Describe the issue in detail. If it's a broken link, paste the link. If outdated, explain what is wrong or missing.
     validations:
       required: true
 
@@ -30,8 +22,7 @@ body:
     id: steps
     attributes:
       label: Steps to Reproduce (if applicable)
-      description: If this is a bug, please provide steps to reproduce it.
-      placeholder: 1. Go to ...\n2. Click on ...\n3. See error
+      description: If this is a bug, provide steps to reproduce it.
     validations:
       required: false
 
@@ -39,7 +30,6 @@ body:
     id: suggestions
     attributes:
       label: Suggestions (optional)
-      description: If you have suggestions for how to fix the issue, please provide them here.
-      placeholder: Suggest a fix or update
+      description: Suggestions for how to fix the issue.
     validations:
       required: false
