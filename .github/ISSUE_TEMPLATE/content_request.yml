@@ -1,12 +1,12 @@
-name: Feature Request (New Task or Tool)
-description: Suggest a new analysis task, tool, or other feature for the guide
+name: \U0001F4DA New content request
+description: Suggest a new analysis task, tool, or other content for the guide
 labels: enhancement
 body:
   - type: input
-    id: feature-title
+    id: content-title
     attributes:
       label: Title
-      description: Short title for your feature request
+      description: Short title for your content request
     validations:
       required: true
 
@@ -14,7 +14,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Describe the new task, tool, or feature you would like to see added. Include relevant links if available.
+      description: Describe the new task, tool, or content you would like to see added. Include relevant links if available.
     validations:
       required: true
 
@@ -22,7 +22,7 @@ body:
     id: motivation
     attributes:
       label: Motivation
-      description: Why is this feature important? How will it help users?
+      description: Why is this content important? How will it help users?
     validations:
       required: false
 

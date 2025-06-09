@@ -1,4 +1,4 @@
-name: Bug, Broken Link, or Outdated Content
+name: \U0001F41B Bug, Broken Link, or Outdated Content
 description: Report a bug, broken link, or outdated content in the guide
 labels: bug
 body:
@@ -14,7 +14,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Describe the issue in detail. If it's a broken link, paste the link. If outdated, explain what is wrong or missing.
+      description: Describe the issue in detail. If it's a broken link, paste the link. If outdated content, please explain what is wrong or missing.
     validations:
       required: true
 
@@ -26,10 +26,3 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: suggestions
-    attributes:
-      label: Suggestions (optional)
-      description: Suggestions for how to fix the issue.
-    validations:
-      required: false
