@@ -14,16 +14,19 @@ format:
     theme:
       light: cosmo
       dark: solar
+    respect-user-color-scheme: true
 
 website:
   title: "Bioimage Analysis Tasks-to-Tools Guide"
   open-graph: true
   navbar:
     pinned: true
-    navbar:
+    tools-collapse: true
+    right:
       - icon: github
-        href: https://github.com/
-        aria-label: GitHub
+        href: https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools
+        aria-label: GitHub repository
+
   sidebar:
     style: docked
     contents:
@@ -42,6 +45,7 @@ website:
   search:
     location: navbar
     type: overlay
+    show-item-context: true
 
   repo-url: "https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools"
   repo-actions: [source, edit, issue]
