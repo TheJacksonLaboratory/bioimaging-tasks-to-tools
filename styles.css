@@ -22,8 +22,35 @@
   z-index: 1;
 }
 
+.callout-note,
+.callout-note .callout-content,
+.callout-note .callout-body,
+.callout-note .callout-body-container {
+  font-size: inherit !important;
+}
+
+.callout-note .callout-title-container {
+  font-size: 1.25rem !important;
+}
 
 .grid .callout-note {
     margin-top: 0rem;
     margin-bottom: 0rem;
+}
+
+/* Callouts: Force chevron down when collapsed, up when expanded */
+.callout-header .callout-toggle::before {
+  transform: rotate(0deg) !important;
+}
+
+.callout-header[aria-expanded="true"] .callout-toggle::before {
+  transform: rotate(180deg) !important;
+}
+
+/* Sidebar: Force chevron down when collapsed, up when expanded */
+.sidebar-item .sidebar-item-toggle[aria-expanded="false"] .bi-chevron-right::before {
+  transform: rotate(90deg) !important; /* Down when collapsed */
+}
+.sidebar-item .sidebar-item-toggle[aria-expanded="true"] .bi-chevron-right::before {
+  transform: rotate(270deg) !important; /* Up when expanded */
 }
