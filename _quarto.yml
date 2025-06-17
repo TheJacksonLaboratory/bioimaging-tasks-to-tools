@@ -1,0 +1,51 @@
+project:
+  output-dir: _site
+  type: website
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    search: true
+    css:
+      - styles.css
+    header-includes: |
+      <script src="scripts.js" type="application/javascript"></script>
+    theme:
+      light: cosmo
+      dark: solar
+    respect-user-color-scheme: true
+
+website:
+  title: "Bioimage Analysis Tasks-to-Tools Guide"
+  open-graph: true
+  navbar:
+    pinned: true
+    tools-collapse: true
+    right:
+      - icon: github
+        href: https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools
+        aria-label: GitHub repository
+
+  sidebar:
+    style: docked
+    contents:
+      - section: "Common Tasks"
+        contents:
+          - manual_annotation.md
+          - segmentation.md
+          - tracking.md
+          - colocalization.md
+      - section: "Tools"
+        contents:
+          - generalist_tools.md
+          - specialist_tools.md
+
+  page-navigation: true
+  search:
+    location: navbar
+    type: overlay
+    show-item-context: true
+
+  repo-url: "https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools"
+  repo-actions: [source, edit, issue]
