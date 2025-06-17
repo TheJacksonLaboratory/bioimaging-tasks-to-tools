@@ -28,7 +28,7 @@ website:
         aria-label: GitHub repository
 
   sidebar:
-    style: docked
+    style: floating
     contents:
       - section: "Common Tasks"
         contents:
@@ -43,8 +43,8 @@ website:
 
   page-navigation: true
   search:
-    location: navbar
-    type: overlay
+    location: sidebar
+    type: textbox
     show-item-context: true
 
   repo-url: "https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools"
