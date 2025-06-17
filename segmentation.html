@@ -398,11 +398,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="thresholding-based-segmentation" class="level2">
 <h2 class="anchored" data-anchor-id="thresholding-based-segmentation">Thresholding-based segmentation</h2>
 <p>Traditional or classical image segmentation utilizes <a href="https://bioimagebook.github.io/chapters/2-processing/3-thresholding/thresholding.html">thresholding</a> to separate objects from the background based pixel intensity values—a form of semantic segmentation. This process results in a binary mask that can be refined using <a href="https://bioimagebook.github.io/chapters/2-processing/5-morph/morph.html">morphological operations</a> (dilation, erosion, filling of holes, etc.). Then, to segment the individual objects (instance segmentation), <a href="https://bioimagebook.github.io/chapters/2-processing/6-transforms/transforms.html#image-transforms">additional transformations</a> are performed as part of connected components analysis to label groups of pixels that are connected to each other while separating touching objects, e.g.&nbsp;watershed algorithm. Note that this is a flexible, generalist approach that can work well for many types of images, but can be limited if signal to noise ratio is poor or objects are not very distinct.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tools for thresholding-based segmentation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="./generalist_tools.html#fiji">Fiji</a> provides all the needed tools for classical segmentation. It offers both <a href="https://imagej.net/ij/docs/guide/146-28.html#sub:Threshold...%5BT%5D">manual and automated thresholding methods</a> (e.g.&nbsp;Otsu thresholding) for obtaining binary masks. <a href="https://imagej.net/ij/docs/guide/146-29.html#toc-Subsection-29.8">A wide range of morphological operations</a> like erosion, dilation, and opening/closing can be used to refine segmented foreground and separate touching objects (e.g.&nbsp;watershed and Voronoi algorithms). Finally, the <a href="https://imagej.net/ij/docs/guide/146-30.html#toc-Subsection-30.2">Analyze Particles</a> function performs instance segmentation on binary masks using various shape criteria and generates ROIs and <a href="https://imagej.net/ij/docs/guide/146-30.html#sub:Measure...%5Bm%5D">measurements</a>. Importantly, Fiji also provides a wide range of filtering and processing tools that can be used for pre-processing images before segmentation, as well as a wide range of plugins that can be used for specialized segmentation tasks. For a helpful tutorial on thresholding in Fiji, see <a href="https://www.youtube.com/watch?v=3kAY1k5OTx4&amp;list=PLXSm9cHbSZBDh7l7muuDecvWVAoxMfmGD&amp;index=12">this YouTube video series</a>.</p></li>
 <li><p><a href="./generalist_tools.html#cellprofiler">CellProfiler</a> permits threshold-based segmentation of cells and cell-like objects using the <code>Identify Objects</code> modules. First, the <a href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/objectprocessing.html#identifyprimaryobjects"><code>IdentifyPrimaryObjects</code> module</a> is used to segment nuclei-like objects, with multiple parameters available for tuning the thresholding and de-clumping. Next, using the <code>PrimaryObjects</code> to guide detection, the <a href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/objectprocessing.html#identifysecondaryobjects"><code>IdentifySecondaryObjects</code> module</a> will segment cells. Note that CellProfiler has a wide range of <a href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/imageprocessing.html">image processing modules</a> that can be used for pre-processing and <a href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/measurement.html">Measurement modules</a> that can be used for downstream analysis. For an introduction to segmentation using CellProfiler, please see the <a href="https://tutorials.cellprofiler.org/#beginner-segmentation">Basic Segmentation tutorial</a>, followed by the <a href="https://tutorials.cellprofiler.org/#advanced-segmentation">Advanced Segmentation tutorial</a>.</p></li>
 <li><p><a href="./generalist_tools.html#qupath">QuPath</a> has two different segmentation tools that use thresholding: one general, one cell-specific. For the first case, one can define <a href="https://qupath.readthedocs.io/en/stable/docs/tutorials/thresholding.html#thresholders-in-qupath">threshold-based pixel classifiers</a>, offering a generalist approach to defining ROIs (semantic segmentation). For the second case, QuPath has a specialized <a href="https://qupath.readthedocs.io/en/stable/docs/tutorials/cell_detection.html">cell detection tool</a> that uses a combination of thresholding and morphological operations to detect individual cells (instance segmentation). Both of these features in QuPath are well adapted to large 2D images, such as whole slide images, because they can be used at different resolution levels and computed on-the-fly using built in tiling.</p></li>
 </ul>
+</div>
+</div>
+</div>
 </section>
 <section id="machine-learning-segmentation" class="level2">
 <h2 class="anchored" data-anchor-id="machine-learning-segmentation">Machine learning segmentation</h2>
@@ -410,20 +425,50 @@ ul.task-list li input[type="checkbox"] {
 <section id="segmentation-using-classification-based-approaches" class="level3">
 <h3 class="anchored" data-anchor-id="segmentation-using-classification-based-approaches">Segmentation using classification-based approaches</h3>
 <p>Classification-based approaches take computed features and use them to classify each pixel or object as belonging to a particular class (e.g.&nbsp;object or background). This can be done using a wide range of classifiers, such as random forests, support vector machines, etc. Typically they do not require a large amount of training data, so “painting” some labels can be sufficient, but can be limited in their ability to generalize to new data. Importantly, both training and inference can be very fast. Finally, classification approaches can be used for both pixel-wise and object-wise segmentation, meaning that these approaches can be applied to both segment objects, as well as classify those objects into different classes, such a cell or tissue type.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tools for classification-based segmentation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="./specialist_tools.html#ilastik">ilastik</a> provides a stand-alone GUI for training and applying pixel and object classification models. For <a href="https://www.ilastik.org/documentation/pixelclassification/pixelclassification">pixel classification</a>, GUI enables the user to sparsely label training data and then select features, such as intensity, texture, and edge features, to use to train a classifier. The trained classifier can then be applied to batches of images to segment them. Next, <a href="https://www.ilastik.org/documentation/objects/objects">object classification</a> can be trained and applied in similar fashion, using the image data and the output of the pixel classifier.</p></li>
 <li><p><a href="./generalist_tools.html#fiji">Fiji</a> provides a number of plugins that can be used for classification-based segmentation. A commonly used and versatile plugin is <a href="https://imagej.net/plugins/tws/">Trainable Weka Segmentation</a>, which enables the user to train a classifier using a very wide range of features and then apply it to segment images. Another option is <a href="https://imagej.net/plugins/labkit/">Labkit</a> which provides an intuitive labeling UI and a performant random forest classifier with optimizations for big data. Finally, the <a href="https://www.ilastik.org/documentation/fiji_export/plugin">ilastik plugin</a> can be used to apply pre-trained ilastik models to segment images.</p></li>
 <li><p><a href="./generalist_tools.html#qupath">QuPath</a> provides a <a href="https://qupath.readthedocs.io/en/stable/docs/tutorials/pixel_classification.html">Pixel classifier</a> that can use the built-in annotation tools to train a classifier using a wide range of features, with a live preview. The classifier can be saved and then applied to new images. Additionally, QuPath uses a similar interface for object classification, which can be used, for example, to <a href="https://qupath.readthedocs.io/en/stable/docs/tutorials/cell_classification.html">classify cells into different classes based on a wide range of features</a>. These features in QuPath are well adapted to large 2D images, such as whole slide images, because they can be used at different resolution levels and computed on-the-fly using built in tiling. For an overview of these concepts in QuPath workflows, including annotations, detections, and classifiers, please see this <a href="https://www.youtube.com/watch?v=jb--T5KtLoU">QuPath Concepts video from 2023 Samples to Knowledge</a>.</p></li>
 <li><p><a href="./generalist_tools.html#napari">napari</a> provides a number of plugins that use the napari annotation tools to facilitate training classification-based segmentation algorithms. For example, for training a pixel classifier, <a href="https://guiwitz.github.io/napari-convpaint/book/Landing.html">napari-convpaint</a> uses sparse annotations and a convolutional neural network (CNN) to extract features for the classification, making the process simple for the user. Alternately, for a more conventional and comprehensive approach, <a href="https://github.com/haesleinhuepf/napari-accelerated-pixel-and-object-classification#napari-accelerated-pixel-and-object-classification-apoc">napari-accelerated-pixel-and-object-classification</a> can be used to train object and semantic segmentation random forest classifiers, as well as perform object classification.</p></li>
 </ul>
+</div>
+</div>
+</div>
 </section>
 <section id="segmentation-using-deep-learning" class="level3">
 <h3 class="anchored" data-anchor-id="segmentation-using-deep-learning">Segmentation using deep learning</h3>
 <p>Deep learning (DL) approaches have made automated segmentation tractable for complex images, such as those with many objects, complex shapes, or low contrast. Deep learning models can learn from a large number of features, but are less interpretable and require a large amount of training data. Further, training can be slow and require a lot of computational resources, particularly graphical processing units (GPU). However, frequently they can generalize well to new data and pre-trained models are available. Typically, deep learning approaches can be used for both pixel-wise and object-wise segmentation, meaning that these approaches can be applied to both segment objects, as well as classify those objects into different classes, such a cell or tissue type. This is a rapidly evolving field with very many algorithms available, most implemented in Python using <code>torch</code> or <code>tensorflow</code> machine learning frameworks. Here we will focus on robust, most commonly used tools that have GUIs for applying and/or training the models.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tools for deep learning-based segmentation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="./specialist_tools.html#cellpose">Cellpose</a> is a state-of-the-art DL algorithm developed for cell segmentation, with a number of pre-trained models that can be used for segmenting cells and nuclei in a wide range of 2D biological images, including both fluorescence imaging and histopathology. These models can be utilized in the Cellpose GUI or via the command line or Python API. Importantly, the Cellpose GUI also provides tools for <a href="https://cellpose.readthedocs.io/en/latest/gui.html#training-your-own-cellpose-model">training new models, as well as for fine-tuning existing models</a>—see alo this <a href="https://www.youtube.com/watch?v=5qANHWoubZU">helpful tutorial on YouTube</a>. Cellpose models can also be used by plugins/extensions for other software, e.g.&nbsp;<a href="https://www.napari-hub.org/plugins/cellpose-napari">cellpose-napari</a> and <a href="https://www.napari-hub.org/plugins/napari-serialcellpose">napari-serialcellpose</a> for napari or <a href="https://github.com/BIOP/qupath-extension-cellpose#qupath-cellposeomnipose-extension">qupath-extension-cellpose</a> for QuPath (note: this QuPath extension also provides for training/fine-tuning models).</p></li>
 <li><p><a href="https://stardist.net">StarDist</a> is a state-of-the-art DL algorithm developed for segmenting nuclei and other star-convex (blob-like) objects in 2D or 3D. Two pre-trained models for segmenting nuclei in 2D are readily available, one for fluorescence images and the other for H&amp;E images. Training of models can be performed using Python API. StarDist does not have a dedicated GUI, however for inference, one can use StarDist models via plugins/extensions: <a href="https://imagej.net/plugins/stardist">Fiji StarDist plugin</a>, <a href="https://qupath.readthedocs.io/en/0.4/docs/deep/stardist.html">QuPath StarDist extension</a>, or <a href="https://www.napari-hub.org/plugins/stardist-napari">napari StarDist plugin</a>.</p></li>
 </ul>
+</div>
+</div>
+</div>
 
 
 </section>

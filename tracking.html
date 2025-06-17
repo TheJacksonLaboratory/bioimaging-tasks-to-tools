@@ -387,12 +387,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="tracking-cells-and-particles" class="level1">
 <h1>Tracking cells and particles</h1>
 <p>Tracking is an essential component of analyzing time-lapse studies. Essentially, it involves detecting and labeling objects, frame-by-frame, and then linking the objects between frames. This way, objects can be followed over time. It provides insight into dynamic processes, such as cell migration &amp; cell fate, as well as organelle dynamics.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tools for tracking cells and particles
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="./generalist_tools.html#fiji">Fiji</a> provides access to <a href="https://imagej.net/plugins/trackmate/">TrackMate</a>, a well-established standout in terms of object and particle tracking. It provides a wide range of tracking algorithms, including simple linking, as well as more complex algorithms like the Linear Assignment Problem (LAP) tracking. TrackMate can interface with a wide range of segmentation or spot detection algorithms, so it be used for tracking cells, particles, and other objects in 2D and 3D images of various modalities. It also provides track visualization and analysis tools. For a helpful guide to getting started with TrackMate, see this <a href="https://youtu.be/7HWtaikIFcs?t=2">Microcourse Youtube video</a>.</p></li>
 <li><p><a href="./generalist_tools.html#cellprofiler">CellProfiler</a> includes a <a href="https://cellprofiler-manual.s3.amazonaws.com/CellProfiler-4.2.6/modules/objectprocessing.html#trackobjects">TrackObjects</a> module that can be used for tracking previously identified Objects over the course of a series of frames. It implements a number of different tracking methods, ranging from a simple overlap approach to LAP tracking. The module can provide a wide range of measurements, such as displacements, object lifetimes, and lineage information. For an example pipeline using TrackObjects, see the <a href="https://cellprofiler.org/examples/">CellProfiler Examples</a>.</p></li>
 <li><p><a href="./generalist_tools.html#napari">napari</a> provides a <a href="https://napari.org/stable/howtos/layers/tracks.html">Tracks layer</a> which can be useful for visualization of tracking data and has a number of tracking plugins available on the <a href="https://www.napari-hub.org/plugins?search=tracking&amp;sort=relevance&amp;page=1">napari-hub</a>. A few standouts include: <a href="https://www.napari-hub.org/plugins/btrack">btrack</a> a Bayesian multi-object tracker and <a href="https://www.napari-hub.org/plugins/napari-trackastra">napari-trackastra</a> a transformer-based cell tracker.</p></li>
 <li><p><a href="https://royerlab.github.io/ultrack/index.html">ultrack</a> is a large-scale versatile cell tracking package that considers a set of multiple segmentation hypotheses and picks the segments that are most consistent over time, making it less susceptible to mistakes when traditional segmentation fails. it is available as a Python package that is also a <a href="https://royerlab.github.io/ultrack/napari.html">napari plugin</a> with a GUI widget. Additionally, ultrack provides a <a href="https://imagej.github.io/plugins/ultrack">Fiji plugin</a> which uses TrackMate for visualization.</p></li>
 </ul>
+</div>
+</div>
+</div>
 
 
 </section>
