@@ -1,0 +1,29 @@
+.g-col-6 {
+    display: flex
+}
+
+
+.clickable-callout {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative; /* Add this */
+  z-index: 0;          /* Ensure it's below the ::after */
+}
+
+.clickable-callout:hover {
+  background-color: #f0f8ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clickable-callout::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+
+.grid .callout-note {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
