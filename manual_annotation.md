@@ -4,7 +4,7 @@ Manual annotation of images can be an important image analysis step, for example
 
 ## General 2D images
 
-Annotating 2D images is a common task and there are many tools available. 
+Annotating 2D images is a common task and there are many tools available for images that are 2D (or 2D planes of 3D images) and do not exceed typical memory limits of a desktop computer. Here we highlight three popular tools that can be used for this purpose.
 
 :::{.callout-note collapse='true' icon="false"}
 ## Tools for general manual annotations of 2D images
@@ -18,7 +18,7 @@ Annotating 2D images is a common task and there are many tools available.
 
 ## Large 2D and multiscale images
 
-Annotating large images or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well.
+Annotating large images, which exceed available memory, or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well. The following tools are well-suited for this purpose, but can also be used for general 2D images.
 
 :::{.callout-note collapse='true' icon="false"}
 ## Tools for annotating large, multiscale (pyramidal) images
@@ -31,7 +31,7 @@ Annotating large images or multiscale (pyramidal) images, such as whole slide sc
 
 ## 3D images
 
-Annotating 3D images can be challenging, because of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier. 
+Annotating 3D images can be challenging, because of the limitations of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate 3D images plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier by allowing you to annotate using 3D "brushes", by interpolating annotations between planes, or providing orthogonal and/or oblique planes for annotating. The following tools are well-suited for annotating 3D images.
 
 :::{.callout-note collapse='true' icon="false"}
 ## Tools for annotating 3D images
