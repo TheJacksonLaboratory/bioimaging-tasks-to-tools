@@ -21,6 +21,10 @@
 
 [napari](https://napari.org) is a Python image visualization and annotation application. While typically installed as a Python package, it does have [a bundled installation with a built-in Python environment](https://napari.org/stable/tutorials/fundamentals/installation_bundle_conda.html) on Linux, macOS, and Windows. napari provides a graphical user interface (GUI) for viewing n-dimensional data, such as images, as well as annotating with points, polygons, or labels. While napari does not include any built-in analysis tools, it seamlessly integrates with [the Scientific Python ecosystem](https://scientific-python.org/specs/core-projects/), as well as Python libraries, thanks to a built-in Python console and Python API. Further, it is [a robust ecosystem of plugins](https://www.napari-hub.org) that enable a wide range of file import, analysis (including machine learning), and annotation functions. For an overview of its capabilities, see the [Volume Imaging Australia webinar (Oct. 2024) by Juan Nunez-Iglesias](https://www.youtube.com/watch?v=Hi_MaWrb28o).
 
+## 3D Slicer
+
+[3D Slicer](https://www.slicer.org) a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes. It supports visualizing a wide range of datasets, including images, segmentations, surfaces, annotations, transformations, etc., in 2D, 3D, and 4D. It has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. 3D Slicer is particularly well-suited for working with modalities like computed tomography (CT) or magnetic resonance imaging (MRI), but microscopy is also supported. It has a wide range of built-in tools for image segmentation, registration, and visualization. Additionally, it has a large ecosystem of >150 extensions that can be installed to add functionality. It has [a variety of tutorials](https://training.slicer.org) and [an active support and discussion forum](https://discourse.slicer.org).
+
 ---
 
 
