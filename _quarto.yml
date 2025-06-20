@@ -47,5 +47,9 @@ website:
     type: textbox
     show-item-context: true
 
+
   repo-url: "https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools"
   repo-actions: [source, edit, issue]
+
+date: last-modified
+license: "CC BY"
