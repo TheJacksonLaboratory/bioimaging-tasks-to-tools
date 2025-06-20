@@ -393,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include: <code>labels</code> used to assign every pixel of an object to a class or category, <code>bounding boxes</code> used to indicate the location and size of an object, <code>polygons</code> (even if drawn free-hand) used to outline ROIs, and <code>points</code> used to mark specific coordinates.</p>
 <section id="general-2d-images" class="level2">
 <h2 class="anchored" data-anchor-id="general-2d-images">General 2D images</h2>
-<p>Annotating 2D images is a common task and there are many tools available.</p>
+<p>Annotating 2D images is a common task and there are many tools available for images that are 2D (or 2D planes of 3D images) and do not exceed typical memory limits of a desktop computer. Here we highlight three popular tools that can be used for this purpose.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -417,7 +417,7 @@ Tools for general manual annotations of 2D images
 </section>
 <section id="large-2d-and-multiscale-images" class="level2">
 <h2 class="anchored" data-anchor-id="large-2d-and-multiscale-images">Large 2D and multiscale images</h2>
-<p>Annotating large images or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well.</p>
+<p>Annotating large images, which exceed available memory, or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well. The following tools are well-suited for this purpose, but can also be used for general 2D images.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -440,7 +440,7 @@ Tools for annotating large, multiscale (pyramidal) images
 </section>
 <section id="d-images" class="level2">
 <h2 class="anchored" data-anchor-id="d-images">3D images</h2>
-<p>Annotating 3D images can be challenging, because of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier.</p>
+<p>Annotating 3D images can be challenging, because of the limitations of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate 3D images plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier by allowing you to annotate using 3D “brushes”, by interpolating annotations between planes, or providing orthogonal and/or oblique planes for annotating. The following tools are well-suited for annotating 3D images.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
