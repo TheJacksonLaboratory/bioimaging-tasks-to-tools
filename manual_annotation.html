@@ -42,9 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1ac5d22c1c767d718bb72c460dd355f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-905433ffa22618bb005779f2b23c5ce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-29607777f98c4b17c51d54794cab2ecb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-905433ffa22618bb005779f2b23c5ce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -412,7 +412,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="manually-annotating-regions-of-interest" class="level1">
 <h1>Manually annotating regions of interest</h1>
-<p>Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include: <code>labels</code> used to assign every pixel of an object to a class or category, <code>bounding boxes</code> used to indicate the location and size of an object, <code>polygons</code> (even if drawn free-hand) used to outline ROIs, and <code>points</code> used to mark specific coordinates.</p>
+<p>Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include:</p>
+<ul>
+<li><code>labels</code>, used to assign every pixel of an object to a class or category</li>
+<li><code>bounding boxes</code>, used to indicate the location and size of an object</li>
+<li><code>polygons</code>, (even if drawn free-hand) used to outline ROIs</li>
+<li><code>points</code>, used to mark specific coordinates</li>
+</ul>
 <section id="general-2d-images" class="level2">
 <h2 class="anchored" data-anchor-id="general-2d-images">General 2D images</h2>
 <p>Annotating 2D images is a common task and there are many tools available for images that are 2D (or 2D planes of 3D images) and do not exceed typical memory limits of a desktop computer. Here we highlight three popular tools that can be used for this purpose.</p>
@@ -477,7 +483,7 @@ Tools for annotating 3D images
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="./generalist_tools.html#3d-slicer">3D Slicer</a> has a wide range of tools for annotating 3D images, including freehand and polygonal annotations, as well as points, available through the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/markups.html"><code>Markups</code></a> module. Importantly, these can have various measurements associated with them. 3D Slicer provides orthogonal views of the image, which can be used to annotate in 3D. Additionally, it has the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html"><code>Segment Editor</code></a> module that can be used for specifying segments (structures of interest) in 2D/3D/4D images. Additionally, the <code>Paint</code> tool has a sphere mode that is well-suited for annotating volumes. Further, <code>Grow from seeds</code> and <code>Fill between slices</code> can be used to more quickly segment objects in 3D. Finally, a number of extensions can be installed that provide more advanced tools for creating and/or editing segmentations, see <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html#segmentation-modules">the documentation</a>.</p></li>
-<li><p><a href="./specialist_tools.html#paintera">Paintera</a> enables performant annotation of large 3D datasets, thanks to multiscale rendering. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes and handles multi-scale label datasets. This is particularly useful for labeling large, complex geometries, such as neurons. It is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See <a href="https://www.youtube.com/watch?v=ZDcK0aCLoRc">this YouTube video</a> for an in-depth tutorial.</p></li>
+<li><p><a href="./specialist_tools.html#paintera">Paintera</a> enables performant annotation of large 3D datasets, thanks to multiscale rendering, and also handles multiscale label datasets. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes. This is particularly useful for labeling large, complex geometries, such as neurons. Further, it is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See <a href="https://www.youtube.com/watch?v=ZDcK0aCLoRc">this YouTube video</a> for an in-depth tutorial.</p></li>
 <li><p><a href="./generalist_tools.html#napari">napari</a> Labels layers can be 3D and labels can be viewed and edited in 3D mode—though the limitations of a 2D screen and mouse controls can make precise edits challenging. Additionally, while in 2D mode, the <code>n edit dim</code> parameter can permit simultaneously painting into adjacent slices based on the brush radius. Finally, there are plugins that can help facilitate 3D annotation, such as <a href="https://www.napari-hub.org/plugins/napari-nD-annotator">napari-nD-annotator</a>, which permits auto-filling labels and slice interpolation, and <a href="https://napari-threedee.github.io">napari-threedee</a> that enables using oblique rendering planes for annotation. However, napari is presently not well-suited for annotating multiscale images and 3D rendering depends on your GPU.</p></li>
 </ul>
 </div>
