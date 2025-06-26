@@ -10,8 +10,8 @@ on:
     branches:
       - main
   pull_request:
-    paths:
-      - '.github/workflows/links.yml'
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -32,7 +32,7 @@ jobs:
         continue-on-error: true
 
       - name: Create Issue From File
-        if: steps.lychee.outputs.exit_code != 0
+        if: steps.lychee.outputs.exit_code != 0 && github.event_name != 'pull_request'
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: Link Checker Report
