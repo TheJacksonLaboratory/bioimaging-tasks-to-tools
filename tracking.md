@@ -2,7 +2,7 @@
 
 Tracking is an essential component of analyzing time-lapse studies. Essentially, it involves detecting and labeling objects, frame-by-frame, and then linking the objects between frames. This way, objects can be followed over time. It provides insight into dynamic processes, such as cell migration & cell fate, as well as organelle dynamics.  
 
-:::{.callout-note collapse='true' icon="false"}
+:::{.callout-note collapse='false' icon="false"}
 ## Tools for tracking cells and particles
 * [Fiji](generalist_tools.md#fiji) provides access to [TrackMate](https://imagej.net/plugins/trackmate/), a well-established standout in terms of object and particle tracking. It provides a wide range of tracking algorithms, including simple linking, as well as more complex algorithms like the Linear Assignment Problem (LAP) tracking. TrackMate can interface with a wide range of segmentation or spot detection algorithms, so it be used for tracking cells, particles, and other objects in 2D and 3D images of various modalities. It also provides track visualization and analysis tools. For a helpful guide to getting started with TrackMate, see this [Microcourse Youtube video](https://youtu.be/7HWtaikIFcs?t=2).  
 
