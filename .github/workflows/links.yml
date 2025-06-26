@@ -10,8 +10,8 @@ on:
     branches:
       - main
   pull_request:
-    paths:
-      - '.github/workflows/links.yml'
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
