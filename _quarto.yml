@@ -42,6 +42,7 @@ website:
         contents:
           - generalist_tools.md
           - specialist_tools.md
+      - about.md
 
   page-navigation: true
   search:
