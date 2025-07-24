@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-24">
 
-<title>generalist_tools – Bioimage Analysis Tasks-to-Tools Guide</title>
+<title>Commonly used generalist tools – Bioimage Analysis Tasks-to-Tools Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-72bda6147ae88675f0557f210d557039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-4eb7e2958a5e015016747e776a672dcd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -77,7 +77,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:title" content="Commonly used generalist tools – Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Bioimage Analysis Tasks-to-Tools Guide">
 </head>
 
@@ -285,9 +286,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./generalist_tools.html">Tools</a></li><li class="breadcrumb-item"><a href="./generalist_tools.html">Commonly used generalist tools</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Commonly used generalist tools</h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -305,6 +306,12 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioimage analysis tasks-to-tools guide</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -373,16 +380,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#commonly-used-generalist-tools" id="toc-commonly-used-generalist-tools" class="nav-link active" data-scroll-target="#commonly-used-generalist-tools">Commonly used generalist tools</a>
-  <ul class="collapse">
-  <li><a href="#fiji" id="toc-fiji" class="nav-link" data-scroll-target="#fiji">Fiji</a></li>
+  <li><a href="#fiji" id="toc-fiji" class="nav-link active" data-scroll-target="#fiji">Fiji</a></li>
   <li><a href="#cellprofiler" id="toc-cellprofiler" class="nav-link" data-scroll-target="#cellprofiler">CellProfiler</a></li>
   <li><a href="#qupath" id="toc-qupath" class="nav-link" data-scroll-target="#qupath">QuPath</a></li>
   <li><a href="#omero.iviewer" id="toc-omero.iviewer" class="nav-link" data-scroll-target="#omero.iviewer">OMERO.iviewer</a></li>
   <li><a href="#napari" id="toc-napari" class="nav-link" data-scroll-target="#napari">napari</a></li>
   <li><a href="#d-slicer" id="toc-d-slicer" class="nav-link" data-scroll-target="#d-slicer">3D Slicer</a></li>
   <li><a href="#finding-more-tools" id="toc-finding-more-tools" class="nav-link" data-scroll-target="#finding-more-tools">Finding more tools</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/generalist_tools.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/generalist_tools.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -390,8 +394,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./generalist_tools.html">Tools</a></li><li class="breadcrumb-item"><a href="./generalist_tools.html">Commonly used generalist tools</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title d-none d-lg-block">Commonly used generalist tools</h1>
 </div>
 
 
@@ -402,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 24, 2025</p>
     </div>
   </div>
   
@@ -414,8 +419,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="commonly-used-generalist-tools" class="level1">
-<h1>Commonly used generalist tools</h1>
 <section id="fiji" class="level2">
 <h2 class="anchored" data-anchor-id="fiji">Fiji</h2>
 <p><a href="https://fiji.sc">Fiji</a> is a distribution of the <a href="https://imagej.net/software/imagej/">ImageJ</a> open-source software package for analyzing scientific images. Fiji (and ImageJ) is Java-based and has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. Importantly, Fiji bundles in many popular plugins for image analysis and includes an installer and updater mechanism. A list of all plugins can be found <a href="https://imagej.net/list-of-extensions">here</a>. It has robust support for <a href="https://imagej.net/scripting/macro">macros</a>, including a <a href="https://imagej.net/scripting/macro#the-recorder">recorder</a>, as well as <a href="https://imagej.net/scripting/">scripting</a>. Thanks to the <a href="https://imagej.net/formats/bio-formats">Bio-formats Importer</a>, Fiji can open a wide range of file formats, including many <a href="https://bio-formats.readthedocs.io/en/stable/supported-formats.html">vendor specific and proprietary ones</a>. Overall, Fiji is extremely flexible: it can act as an image viewer, be used for annotation, or serve as a flexible image analysis platform. Importantly, it has a very large and diverse user base so getting help can be easy. For an excellent “Getting started” tutorial, see this <a href="https://www.youtube.com/watch?v=HUOvVakvGcY">I2K2022 Introduction to Fiji video</a>.</p>
@@ -450,7 +453,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->

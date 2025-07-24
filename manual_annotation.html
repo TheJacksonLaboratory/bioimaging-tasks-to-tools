@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-24">
 
-<title>manual_annotation – Bioimage Analysis Tasks-to-Tools Guide</title>
+<title>Manually annotating regions of interest – Bioimage Analysis Tasks-to-Tools Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./segmentation.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -43,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-72bda6147ae88675f0557f210d557039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-4eb7e2958a5e015016747e776a672dcd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -76,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:title" content="Manually annotating regions of interest – Bioimage Analysis Tasks-to-Tools Guide">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Bioimage Analysis Tasks-to-Tools Guide">
 </head>
@@ -285,9 +286,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_annotation.html">Common Tasks</a></li><li class="breadcrumb-item"><a href="./manual_annotation.html">Manually annotating regions of interest</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Manually annotating regions of interest</h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -305,6 +306,12 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioimage analysis tasks-to-tools guide</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -373,12 +380,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#manually-annotating-regions-of-interest" id="toc-manually-annotating-regions-of-interest" class="nav-link active" data-scroll-target="#manually-annotating-regions-of-interest">Manually annotating regions of interest</a>
-  <ul class="collapse">
-  <li><a href="#general-2d-images" id="toc-general-2d-images" class="nav-link" data-scroll-target="#general-2d-images">General 2D images</a></li>
+  <li><a href="#general-2d-images" id="toc-general-2d-images" class="nav-link active" data-scroll-target="#general-2d-images">General 2D images</a></li>
   <li><a href="#large-2d-and-multiscale-images" id="toc-large-2d-and-multiscale-images" class="nav-link" data-scroll-target="#large-2d-and-multiscale-images">Large 2D and multiscale images</a></li>
   <li><a href="#d-images" id="toc-d-images" class="nav-link" data-scroll-target="#d-images">3D images</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/manual_annotation.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/manual_annotation.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -386,8 +390,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_annotation.html">Common Tasks</a></li><li class="breadcrumb-item"><a href="./manual_annotation.html">Manually annotating regions of interest</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title d-none d-lg-block">Manually annotating regions of interest</h1>
 </div>
 
 
@@ -398,7 +403,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 24, 2025</p>
     </div>
   </div>
   
@@ -410,8 +415,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="manually-annotating-regions-of-interest" class="level1">
-<h1>Manually annotating regions of interest</h1>
 <p>Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include:</p>
 <ul>
 <li><code>labels</code>, used to assign every pixel of an object to a class or category</li>
@@ -491,7 +494,6 @@ Tools for annotating 3D images
 </div>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
@@ -909,6 +911,9 @@ Tools for annotating 3D images
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Bioimage analysis tasks-to-tools guide">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bioimage analysis tasks-to-tools guide</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./segmentation.html" class="pagination-link" aria-label="Automated segmentation of regions of interest">

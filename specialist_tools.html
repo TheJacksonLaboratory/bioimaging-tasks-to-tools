@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-24">
 
-<title>specialist_tools – Bioimage Analysis Tasks-to-Tools Guide</title>
+<title>Commonly used specialized tools – Bioimage Analysis Tasks-to-Tools Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-72bda6147ae88675f0557f210d557039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-4eb7e2958a5e015016747e776a672dcd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -76,7 +76,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:title" content="Commonly used specialized tools – Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Bioimage Analysis Tasks-to-Tools Guide">
 </head>
 
@@ -284,9 +285,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./generalist_tools.html">Tools</a></li><li class="breadcrumb-item"><a href="./specialist_tools.html">Commonly used specialized tools</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Commonly used specialized tools</h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -304,6 +305,12 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioimage analysis tasks-to-tools guide</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -372,13 +379,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#commonly-used-specialized-tools" id="toc-commonly-used-specialized-tools" class="nav-link active" data-scroll-target="#commonly-used-specialized-tools">Commonly used specialized tools</a>
-  <ul class="collapse">
-  <li><a href="#cellpose" id="toc-cellpose" class="nav-link" data-scroll-target="#cellpose">Cellpose</a></li>
+  <li><a href="#cellpose" id="toc-cellpose" class="nav-link active" data-scroll-target="#cellpose">Cellpose</a></li>
   <li><a href="#ilastik" id="toc-ilastik" class="nav-link" data-scroll-target="#ilastik">ilastik</a></li>
   <li><a href="#paintera" id="toc-paintera" class="nav-link" data-scroll-target="#paintera">Paintera</a></li>
   <li><a href="#finding-more-tools" id="toc-finding-more-tools" class="nav-link" data-scroll-target="#finding-more-tools">Finding more tools</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/specialist_tools.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/specialist_tools.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -386,8 +390,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./generalist_tools.html">Tools</a></li><li class="breadcrumb-item"><a href="./specialist_tools.html">Commonly used specialized tools</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title d-none d-lg-block">Commonly used specialized tools</h1>
 </div>
 
 
@@ -398,7 +403,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 24, 2025</p>
     </div>
   </div>
   
@@ -410,8 +415,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="commonly-used-specialized-tools" class="level1">
-<h1>Commonly used specialized tools</h1>
 <section id="cellpose" class="level2">
 <h2 class="anchored" data-anchor-id="cellpose">Cellpose</h2>
 <p><a href="https://www.cellpose.org">Cellpose</a> is a state-of-the-art generalist cell segmentation deep learning model, implemented in Python using <code>torch</code>. It provides a graphical user interface (GUI) segmenting cells and nuclei using different pre-trained models. Pre-trained models can be used with a wide range of cell types and imaging modalities, but the GUI also enables fine-tuning an existing model or training new models. With Cellpose 3.0 additional image restoration features are also available. However, installation requires a Python environment. Note: Cellpose has a Python API so it can also be accessed programmatically.</p>
@@ -435,7 +438,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->

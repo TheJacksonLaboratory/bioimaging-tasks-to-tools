@@ -17,7 +17,7 @@
 
 /* ensure the hover effect works in dark mode */
 body.quarto-dark .clickable-callout:hover {
-  background-color: #23272e !important;
+  background-color: #273041 !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
 }
 

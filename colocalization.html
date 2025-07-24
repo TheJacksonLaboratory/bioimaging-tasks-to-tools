@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-24">
 
-<title>colocalization – Bioimage Analysis Tasks-to-Tools Guide</title>
+<title>Colocalization – Bioimage Analysis Tasks-to-Tools Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-72bda6147ae88675f0557f210d557039.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-4eb7e2958a5e015016747e776a672dcd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Bioimage Analysis Tasks-to-Tools Guide">
+<meta property="og:title" content="Colocalization – Bioimage Analysis Tasks-to-Tools Guide">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Bioimage Analysis Tasks-to-Tools Guide">
 </head>
@@ -286,9 +286,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_annotation.html">Common Tasks</a></li><li class="breadcrumb-item"><a href="./colocalization.html">Colocalization</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Colocalization</h1>
+        </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -306,6 +306,12 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioimage analysis tasks-to-tools guide</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -369,21 +375,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#colocalization" id="toc-colocalization" class="nav-link active" data-scroll-target="#colocalization">Colocalization</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/colocalization.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/colocalization.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_annotation.html">Common Tasks</a></li><li class="breadcrumb-item"><a href="./colocalization.html">Colocalization</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title d-none d-lg-block">Colocalization</h1>
 </div>
 
 
@@ -394,7 +395,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 24, 2025</p>
     </div>
   </div>
   
@@ -406,8 +407,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="colocalization" class="level1">
-<h1>Colocalization</h1>
 <p>Colocalization aims to quantify the degree of overlap between two or more channels in an image, for example representing subcellular fluorescence markers. This can be done using a number of different metrics, such as Pearson’s correlation coefficient or Manders’ overlap coefficient. A good overview of these approaches can be found in <a href="https://journals.biologists.com/jcs/article/131/3/jcs211847/77151/Image-co-localization-co-occurrence-versus">this review</a> and this <a href="https://www.youtube.com/watch?v=Mv4M1HaYdBc">Microcourse Youtube video</a>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -430,7 +429,6 @@ Tools for colocalization analysis
 </div>
 
 
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -862,4 +860,4 @@ Tools for colocalization analysis
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/colocalization.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/colocalization.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/colocalization.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/colocalization.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
