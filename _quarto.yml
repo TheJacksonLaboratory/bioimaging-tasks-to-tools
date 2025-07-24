@@ -13,7 +13,7 @@ format:
       <script src="scripts.js" type="application/javascript"></script>
     theme:
       light: cosmo
-      dark: solar
+      dark: cyborg
     respect-user-color-scheme: true
 
 website:
