@@ -30,6 +30,7 @@ website:
   sidebar:
     style: floating
     contents:
+      - index.md
       - section: "Common Tasks"
         contents:
           - manual_annotation.md

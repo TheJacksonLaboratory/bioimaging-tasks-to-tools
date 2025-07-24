@@ -1,4 +1,6 @@
-# Commonly used generalist tools
+---
+title: "Commonly used generalist tools"
+---
 
 ## Fiji
 

@@ -1,4 +1,6 @@
-# Tracking cells and particles
+---
+title: "Tracking cells and particles"
+---
 
 Tracking is an essential component of analyzing time-lapse studies. Essentially, it involves detecting and labeling objects, frame-by-frame, and then linking the objects between frames. This way, objects can be followed over time. It provides insight into dynamic processes, such as cell migration & cell fate, as well as organelle dynamics.  
 

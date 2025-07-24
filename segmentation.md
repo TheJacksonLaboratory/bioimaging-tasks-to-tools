@@ -1,4 +1,6 @@
-# Automated segmentation of regions of interest
+---
+title: "Automated segmentation of regions of interest"
+---
 
 Segmentation involves breaking up an image into regions of interest (ROIs) based on pixel intensity values, texture, shape, etc. This can be done manually by annotating regions, but automated segmentation is often preferred.  
 Segmentation can be broadly divided into thresholding-based methods and machine-learning-based methods. The former are based on pixel intensity values, while the latter can learn from a large number of features to distinguish between objects and background.

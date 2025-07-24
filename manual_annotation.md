@@ -1,4 +1,6 @@
-# Manually annotating regions of interest
+---
+title: "Manually annotating regions of interest"
+---
 
 Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include:
 

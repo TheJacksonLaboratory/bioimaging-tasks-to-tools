@@ -1,4 +1,6 @@
-# Commonly used specialized tools
+---
+title: "Commonly used specialized tools"
+---
 
 ## Cellpose
 

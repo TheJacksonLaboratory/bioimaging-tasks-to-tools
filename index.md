@@ -1,8 +1,7 @@
 ---
 toc: false
+title: "Bioimage analysis tasks-to-tools guide"
 ---
-
-# Bioimage analysis tasks-to-tools guide
 
 The goal of this guide is to provide a quick reference for selecting the right open-source tool for a given bioimage analysis task. It is intended to help with getting started with a project, particularly for newcomers to (bio)image analysis. It is organized by common tasks, such as manual annotation, segmentation, tracking, colocalization, etc., and for each task, a list of commonly used tools is provided. Finally, the guide includes brief overview descriptions of the tools.
 
