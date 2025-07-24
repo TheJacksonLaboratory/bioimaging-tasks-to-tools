@@ -19,6 +19,7 @@ format:
 website:
   title: "Bioimage Analysis Tasks-to-Tools Guide"
   open-graph: true
+  bread-crumbs: false
   navbar:
     pinned: true
     tools-collapse: true
