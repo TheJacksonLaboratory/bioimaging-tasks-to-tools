@@ -6,6 +6,7 @@
     "section": "",
     "text": "Segmentation involves breaking up an image into regions of interest (ROIs) based on pixel intensity values, texture, shape, etc. This can be done manually by annotating regions, but automated segmentation is often preferred.\nSegmentation can be broadly divided into thresholding-based methods and machine-learning-based methods. The former are based on pixel intensity values, while the latter can learn from a large number of features to distinguish between objects and background.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Automated segmentation of regions of interest"
     ]
@@ -17,6 +18,7 @@
     "section": "Thresholding-based segmentation",
     "text": "Thresholding-based segmentation\nTraditional or classical image segmentation typically utilizes thresholding to separate objects from the background based pixel intensity values—a form of semantic segmentation. This process results in a binary mask that can be refined using morphological operations (dilation, erosion, filling of holes, etc.). Then, to segment the individual objects (instance segmentation), additional transformations are performed as part of connected components analysis to label groups of pixels that are connected to each other while separating touching objects, e.g. watershed algorithm. Note that this is a flexible, generalist approach that can work well for many types of images, but can be limited if signal to noise ratio is poor or objects are not very distinct.\n\n\n\n\n\n\nTools for thresholding-based segmentation\n\n\n\n\n\n\nFiji provides all the needed tools for classical segmentation. It offers both manual and automated thresholding methods (e.g. Otsu thresholding) for obtaining binary masks. Next, a wide range of morphological operations like erosion, dilation, and opening/closing can be used to refine segmented foreground and separate touching objects (e.g. watershed and Voronoi algorithms). Finally, the Analyze Particles function performs instance segmentation on binary masks using various shape criteria and generates ROIs and measurements. Importantly, Fiji also provides a wide range of filtering and processing tools that can be used for pre-processing images before segmentation, as well as a wide range of plugins that can be used for specialized segmentation tasks. For a helpful tutorial on thresholding in Fiji, see this YouTube video series.\nCellProfiler permits threshold-based segmentation of cells and cell-like objects using the Identify Objects modules. First, the IdentifyPrimaryObjects module is used to segment nuclei-like objects, with multiple parameters available for tuning the thresholding and de-clumping. Next, using the PrimaryObjects to guide detection, the IdentifySecondaryObjects module will segment cells. Note that CellProfiler has a wide range of image processing modules that can be used for pre-processing and Measurement modules that can be used for downstream analysis. For an introduction to segmentation using CellProfiler, please see the Basic Segmentation tutorial, followed by the Advanced Segmentation tutorial.\nQuPath has two different segmentation tools that use thresholding: one general, one cell-specific. For the first case, one can define threshold-based pixel classifiers, offering a generalist approach to defining ROIs (semantic segmentation). For the second case, QuPath has a specialized cell detection tool that uses a combination of thresholding and morphological operations to detect individual cells (instance segmentation). Both of these features in QuPath are well adapted to large 2D images, such as whole slide images, because they can be used at different resolution levels and computed on-the-fly using built in tiling.\n3D Slicer provides tools for threshold-based segmentation of 3D images. The Segment Editor module provides a basic Threshold option that can be used to segment objects based on intensity values. More advanced options, such as Local Threshold and Watershed, are provided by Segment Editor Extra Effects extension. For an overview of image segmentation in 3D Slicer, see the Image Segmentation documentation.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Automated segmentation of regions of interest"
     ]
@@ -28,6 +30,7 @@
     "section": "Machine learning segmentation",
     "text": "Machine learning segmentation\nMachine learning approaches have proven very powerful for segmenting images, especially when the objects of interest are not well separated, there is a high amount of noise, poor overall contrast, etc. Rather than just using intensity values, as in thresholding, machine learning models can learn from a large number of features to distinguish between objects and background. This section will be broadly divided into classification-based approaches and deep learning approaches.\n\nSegmentation using classification-based approaches\nClassification-based approaches take computed features and use them to classify each pixel or object as belonging to a particular class (e.g. object or background). This can be done using a wide range of classifiers, such as random forests, support vector machines, etc. Typically they do not require a large amount of training data, so “painting” some labels can be sufficient. However, they can be limited in their ability to generalize to new data. Importantly, both training and inference can be very fast. Finally, classification approaches can be used for both pixel-wise and object-wise segmentation, meaning that these approaches can be applied to both segment objects, as well as classify those objects into different classes, such a cell or tissue type.\n\n\n\n\n\n\nTools for classification-based segmentation\n\n\n\n\n\n\nilastik provides a stand-alone GUI for training and applying pixel and object classification models. For pixel classification, GUI enables the user to sparsely label training data and then select features, such as intensity, texture, and edge features, to use to train a classifier. The trained classifier can then be applied to batches of images to segment them. Next, object classification can be trained and applied in similar fashion, using the image data and the output of the pixel classifier.\nFiji provides a number of plugins that can be used for classification-based segmentation. A commonly used and versatile plugin is Trainable Weka Segmentation, which enables the user to train a classifier using a very wide range of features and then apply it to segment images. Another option is Labkit which provides an intuitive labeling UI and a performant random forest classifier with optimizations for big data. Finally, the ilastik plugin can be used to apply pre-trained ilastik models to segment images.\nQuPath provides a Pixel classifier that can use the built-in annotation tools to train a classifier using a wide range of features, with a live preview. The classifier can be saved and then applied to new images. Additionally, QuPath uses a similar interface for object classification, which can be used, for example, to classify cells into different classes based on a wide range of features. These features in QuPath are well adapted to large 2D images, such as whole slide images, because they can be used at different resolution levels and computed on-the-fly using built in tiling. For an overview of these concepts in QuPath workflows, including annotations, detections, and classifiers, please see this QuPath Concepts video from 2023 Samples to Knowledge.\nnapari provides a number of plugins that use the napari annotation tools to facilitate training classification-based segmentation algorithms. For example, for training a pixel classifier, napari-convpaint uses sparse annotations and a convolutional neural network (CNN) to extract features for the classification, making the process simple for the user. Alternately, for a more conventional and comprehensive approach, napari-accelerated-pixel-and-object-classification can be used to train object and semantic segmentation random forest classifiers, as well as perform object classification.\n\n\n\n\n\n\nSegmentation using deep learning\nDeep learning (DL) approaches have made automated segmentation tractable for complex images, such as those with many objects, complex shapes, or low contrast. Deep learning models can learn from a large number of features, but are less interpretable and require a large amount of training data. Further, training can be slow and require a lot of computational resources, particularly graphical processing units (GPU). However, frequently DL approaches can generalize well to new data and pre-trained models are available. Typically, deep learning approaches can be used for both pixel-wise and object-wise segmentation, meaning that these approaches can be applied to both segment objects, as well as classify those objects into different classes, such a cell or tissue type. This is a rapidly evolving field with very many algorithms available, most implemented in Python using torch or tensorflow machine learning frameworks. Here we will focus on robust, most commonly used tools that have GUIs for applying and/or training the models.\n\n\n\n\n\n\nTools for deep learning-based segmentation\n\n\n\n\n\n\nCellpose is a state-of-the-art DL algorithm developed for cell segmentation, with a number of pre-trained models that can be used for segmenting cells and nuclei in a wide range of 2D biological images, including both fluorescence imaging and histopathology. These models can be utilized in the Cellpose GUI or via the command line or Python API. Importantly, the Cellpose GUI also provides tools for training new models, as well as for fine-tuning existing models—see alo this helpful tutorial on YouTube. Cellpose models can also be used by plugins/extensions for other software, e.g. napari-serialcellpose for napari or qupath-extension-cellpose for QuPath (note: this QuPath extension also provides for training/fine-tuning models).\nStarDist is a state-of-the-art DL algorithm developed for segmenting nuclei and other star-convex (blob-like) objects in 2D or 3D. Two pre-trained models for segmenting nuclei in 2D are readily available, one for fluorescence images and the other for H&E images. Training of models can be performed using Python API. StarDist does not have a dedicated GUI, however for inference, one can use StarDist models via plugins/extensions: Fiji StarDist plugin, QuPath StarDist extension, or napari StarDist plugin.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Automated segmentation of regions of interest"
     ]
@@ -39,6 +42,7 @@
     "section": "",
     "text": "Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include:",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Manually annotating regions of interest"
     ]
@@ -50,6 +54,7 @@
     "section": "General 2D images",
     "text": "General 2D images\nAnnotating 2D images is a common task and there are many tools available for images that are 2D (or 2D planes of 3D images) and do not exceed typical memory limits of a desktop computer. Here we highlight three popular tools that can be used for this purpose.\n\n\n\n\n\n\nTools for general manual annotations of 2D images\n\n\n\n\n\n\nOMERO.iviewer can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the OMERO.iviewer ROI documentation. A brief video tutorial of the main features is available from the I2K2020 OMERO iviewer workshop.\nFiji provides basic, flexible tools for marking regions of interest and an ROI manager for browsing and saving the regions (a dedicated file format is used). Built-in Measurements functionality allows getting shape and intensity measurements for marked regions. Finally, the plugin ecosystem also provides additional annotation tools, for example AnnotatorJ, which enables instance and semantic object annotations, as well as bounding box annotations.\nnapari provides a Labels layer that enables “painting” over objects/regions in an image to annotate those regions into different classes indicated by different integer values (and colors). These annotations are saved as image files. Additionally, Points and Shapes layers can be used to mark coordinates of interest or indicate areas of interest. For these, the annotations are saved as data tables of coordinates. In addition to the built-in tools, the plugin ecosystem provides a large number of additional annotations tools (search the napari-hub). However, napari is presently not well-suited for annotating multiscale images, such as whole slide scans.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Manually annotating regions of interest"
     ]
@@ -61,6 +66,7 @@
     "section": "Large 2D and multiscale images",
     "text": "Large 2D and multiscale images\nAnnotating large images, which exceed available memory, or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well. The following tools are well-suited for this purpose, but can also be used for general 2D images.\n\n\n\n\n\n\nTools for annotating large, multiscale (pyramidal) images\n\n\n\n\n\n\nOMERO.iviewer can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes, even for the case of very large or multiscale (pyramidal) images. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the OMERO.iviewer ROI documentation. A brief video tutorial of the main features is available from the I2K2020 OMERO iviewer workshop.\nQuPath has robust 2D annotation tools for both free-form and polygonal annotations, as well as points. It is particularly well adapted for working with large, multiscale (pyramidal) images, such as whole slide images. It provides a “wand” tool that is zoom-aware and can enable rapid annotation of ROIs at different zoom levels. QuPath provides shape-based measurements (area, perimeter, length, etc.), but pixel intensity measurements can also be computed on-demand. Importantly, annotations can easily be assigned to classes, enabling them to be used for classification tasks. For a video tutorial of the annotation tools in QuPath, please see the 2023 Samples to Knowledge Annotation session.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Manually annotating regions of interest"
     ]
@@ -72,6 +78,7 @@
     "section": "3D images",
     "text": "3D images\nAnnotating 3D images can be challenging, because of the limitations of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate 3D images plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier by allowing you to annotate using 3D “brushes”, by interpolating annotations between planes, or providing orthogonal and/or oblique planes for annotating. The following tools are well-suited for annotating 3D images.\n\n\n\n\n\n\nTools for annotating 3D images\n\n\n\n\n\n\n3D Slicer has a wide range of tools for annotating 3D images, including freehand and polygonal annotations, as well as points, available through the Markups module. Importantly, these can have various measurements associated with them. 3D Slicer provides orthogonal views of the image, which can be used to annotate in 3D. Additionally, it has the Segment Editor module that can be used for specifying segments (structures of interest) in 2D/3D/4D images. Additionally, the Paint tool has a sphere mode that is well-suited for annotating volumes. Further, Grow from seeds and Fill between slices can be used to more quickly segment objects in 3D. Finally, a number of extensions can be installed that provide more advanced tools for creating and/or editing segmentations, see the documentation.\nPaintera enables performant annotation of large 3D datasets, thanks to multiscale rendering, and also handles multiscale label datasets. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes. This is particularly useful for labeling large, complex geometries, such as neurons. Further, it is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See this YouTube video for an in-depth tutorial.\nnapari Labels layers can be 3D and labels can be viewed and edited in 3D mode—though the limitations of a 2D screen and mouse controls can make precise edits challenging. Additionally, while in 2D mode, the n edit dim parameter can permit simultaneously painting into adjacent slices based on the brush radius. Finally, there are plugins that can help facilitate 3D annotation, such as napari-nD-annotator, which permits auto-filling labels and slice interpolation, and napari-threedee that enables using oblique rendering planes for annotation. However, napari is presently not well-suited for annotating multiscale images and 3D rendering depends on your GPU.",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Manually annotating regions of interest"
     ]
@@ -83,6 +90,7 @@
     "section": "",
     "text": "Colocalization aims to quantify the degree of overlap between two or more channels in an image, for example representing subcellular fluorescence markers. This can be done using a number of different metrics, such as Pearson’s correlation coefficient or Manders’ overlap coefficient. A good overview of these approaches can be found in this review and this Microcourse Youtube video.\n\n\n\n\n\n\nTools for colocalization analysis\n\n\n\n\n\n\nFiji offers a number of plugins for colocalization analysis, however currently the best supported one is the JACoP plugin revamped by BIOP. It implements both Pearson’s and Manders’ coefficients, as well as Costes’ automated thresholding.\nCellProfiler provides a MeasureColocalization module for colocalization analysis. The module can be used to calculate a wide range of metrics, such as Pearson’s correlation coefficient, Manders’ overlap coefficient, and Rank Weighted Colocalization coefficient. A helpful example/tutorial is provided on the CellProfiler Examples page.\n\n\n\n\n\n\n\nReuseCC BY 4.0",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Colocalization"
     ]
@@ -94,6 +102,7 @@
     "section": "",
     "text": "Fiji is a distribution of the ImageJ open-source software package for analyzing scientific images. Fiji (and ImageJ) is Java-based and has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. Importantly, Fiji bundles in many popular plugins for image analysis and includes an installer and updater mechanism. A list of all plugins can be found here. It has robust support for macros, including a recorder, as well as scripting. Thanks to the Bio-formats Importer, Fiji can open a wide range of file formats, including many vendor specific and proprietary ones. Overall, Fiji is extremely flexible: it can act as an image viewer, be used for annotation, or serve as a flexible image analysis platform. Importantly, it has a very large and diverse user base so getting help can be easy. For an excellent “Getting started” tutorial, see this I2K2022 Introduction to Fiji video.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -105,6 +114,7 @@
     "section": "",
     "text": "Fiji is a distribution of the ImageJ open-source software package for analyzing scientific images. Fiji (and ImageJ) is Java-based and has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. Importantly, Fiji bundles in many popular plugins for image analysis and includes an installer and updater mechanism. A list of all plugins can be found here. It has robust support for macros, including a recorder, as well as scripting. Thanks to the Bio-formats Importer, Fiji can open a wide range of file formats, including many vendor specific and proprietary ones. Overall, Fiji is extremely flexible: it can act as an image viewer, be used for annotation, or serve as a flexible image analysis platform. Importantly, it has a very large and diverse user base so getting help can be easy. For an excellent “Getting started” tutorial, see this I2K2022 Introduction to Fiji video.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -116,6 +126,7 @@
     "section": "CellProfiler",
     "text": "CellProfiler\nCellProfiler is a Python-based software package focused on image processing and analysis. It has an easy-to-install graphical user interface (GUI) application for macOS and Windows that enables setting up pipelines that include multiple processing and analysis steps, from reading in the image to exporting a data table. In this way, it was designed to permit batch analysis of images without requiring scripting/coding. It has a wide range of image (pre)processing algorithms implemented as modules, along with extensive in-app documentation. However, it has limited viewing capabilities and no annotation tools. Similarly to Fiji, CellProfiler uses Bio-formats to read a wide range of image file formats. At present, CellProfiler has a modest and experimental plugin ecosystem. For an excellent “Getting started” tutorial, see this I2K2022 Introduction to CellProfiler video.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -127,6 +138,7 @@
     "section": "QuPath",
     "text": "QuPath\nQuPath is a Java-based image visualization, annotation, and analysis package. It has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. While many associate QuPath with digital pathology applications, it is actually a general 2D-focused tool that enables manual annotation, as well as automated pixel and object classification. It supports reading a wide range of image formats (including those from popular slide scanners) using Bio-formats (as Fiji and CellProfiler), as well as OpenSlide. Importantly, QuPath has excellent performance for large 2D images, like whole slide images, without the need for manual tiling. A Command History and Groovy scripting can be used to automate workflows. QuPath has a modest, but powerful extension ecosystem, but lacks a central listing. If you’re familiar with Fiji, but new to QuPath, you may want to see this QuPath for Fiji users I2K2022 vieo, otherwise this Introduction to QuPath video from Samples to Knowledge 2023 is a good place to start. Finally, for an overview of core QuPath workflow concepts, including annotations, detections, and classifiers, please see this QuPath Concepts video from 2023 Samples to Knowledge.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -138,6 +150,7 @@
     "section": "OMERO.iviewer",
     "text": "OMERO.iviewer\nOMERO.iviewer is a powerful web-based viewer for images managed using the OMERO data management system. OMERO.iviewer permits performant browsing of large multichannel images remotely (it does not possess 3D rendering capability). Additionally, it has annotation tools for drawing and labeling regions of interest, as well as making simple measurements.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -149,6 +162,7 @@
     "section": "napari",
     "text": "napari\nnapari is a Python image visualization and annotation application. While typically installed as a Python package, it does have a bundled installation with a built-in Python environment on Linux, macOS, and Windows. napari provides a graphical user interface (GUI) for viewing n-dimensional data, such as images, as well as annotating with points, polygons, or labels. While napari does not include any built-in analysis tools, it seamlessly integrates with the Scientific Python ecosystem, as well as Python libraries, thanks to a built-in Python console and Python API. Further, it is a robust ecosystem of plugins that enable a wide range of file import, analysis (including machine learning), and annotation functions. For an overview of its capabilities, see the Volume Imaging Australia webinar (Oct. 2024) by Juan Nunez-Iglesias.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -160,6 +174,7 @@
     "section": "3D Slicer",
     "text": "3D Slicer\n3D Slicer is free, open source software for visualization, processing, segmentation, registration, and analysis of medical/biomedical (and other) 3D images and meshes. It supports visualizing a wide range of datasets, including images, segmentations, surfaces, annotations, transformations, etc., in 2D, 3D, and 4D. It has an easy-to-install graphical user interface (GUI) application for Linux, macOS, and Windows. 3D Slicer is particularly well-suited for working with modalities like computed tomography (CT) or magnetic resonance imaging (MRI), but microscopy is also supported. It has a wide range of built-in tools for image segmentation, registration, and visualization. Additionally, it has a large ecosystem of &gt;150 extensions that can be installed to add functionality. In addition to the documentation, 3D Slicer has a variety of tutorials and an active support and discussion forum.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -171,6 +186,7 @@
     "section": "Finding more tools",
     "text": "Finding more tools\n\nFor a more in-depth curated, categorized listing of open source bioimage analysis tools, see this awesome list.\n \nThe BioImage Informatics Index (Biii), also called “BISE” is a community-curated search engine for finding bioimage analysis software tools, workflows, and training materials.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used generalist tools"
     ]
@@ -182,6 +198,7 @@
     "section": "",
     "text": "The goal of this guide is to provide a quick reference for selecting the right open-source tool for a given bioimage analysis task.\nIt is organized by common tasks, such as manual annotation, segmentation, tracking, colocalization, etc., and for each task, a list of commonly used tools is provided.\nFor more information, please see the About this project page.",
     "crumbs": [
+      "About",
       "Bioimage analysis tasks-to-tools guide"
     ]
   },
@@ -192,6 +209,7 @@
     "section": "Getting more help",
     "text": "Getting more help\nAll of tools discussed here are part of the image.sc community, which hosts varied discussions ranging from beginner questions to in-depth bug troubleshooting. Likewise, all of the tasks are well within scope of image.sc discussions. In addition to posting questions or leading discussions, the effective Search, including Advanced filters, enables easy mining of this rich resource. Finally, the image.sc Announcements board is a great way to keep up with the latest bioimaging tool developments.",
     "crumbs": [
+      "About",
       "Bioimage analysis tasks-to-tools guide"
     ]
   },
@@ -202,6 +220,7 @@
     "section": "",
     "text": "This guide was developed by the Imaging Applications and Machine Learning team in Research IT at The Jackson Laboratory:\n\nFernando Cervantes\nKiya Govek\nErick Ratamero\nPeter Sobolewski\n\n\n\n\n\n\n\nIt is open to contributions from anyone!\n\n\n\nIf something in the guide is unclear or you have suggestions for improvement—or maybe a task or tool to add!—please do not hesitate to reach out! You can use the GitHub links to open issues or edit the content and submit a pull request.",
     "crumbs": [
+      "About",
       "About this project"
     ]
   },
@@ -212,6 +231,7 @@
     "section": "",
     "text": "This guide was developed by the Imaging Applications and Machine Learning team in Research IT at The Jackson Laboratory:\n\nFernando Cervantes\nKiya Govek\nErick Ratamero\nPeter Sobolewski\n\n\n\n\n\n\n\nIt is open to contributions from anyone!\n\n\n\nIf something in the guide is unclear or you have suggestions for improvement—or maybe a task or tool to add!—please do not hesitate to reach out! You can use the GitHub links to open issues or edit the content and submit a pull request.",
     "crumbs": [
+      "About",
       "About this project"
     ]
   },
@@ -222,6 +242,7 @@
     "section": "What",
     "text": "What\n\nThe goal of this guide is to provide a quick reference for selecting the right open-source tool for a given bioimage analysis task.\nIt is intended to help with getting started with a project, particularly for newcomers to (bio)image analysis.\nIt is organized by common tasks, such as manual annotation, segmentation, tracking, colocalization, etc., and for each task, a list of commonly used tools is provided. Finally, the guide includes brief overview descriptions of the tools.\nWhere possible we have linked to tutorials or documentation to help you get started.\n\n\n\n\n\n\n\nPlease note that the guide is not exhaustive!\n\n\n\nAt present, the focus is on tools that offer a graphical user interface (GUI) for ease of use, but in the future, we may expand to include command-line tools and libraries. Likewise, the focus is on tools or plugins that are well-supported, have a large user base, and are actively maintained, such that it is easy to find help if needed.",
     "crumbs": [
+      "About",
       "About this project"
     ]
   },
@@ -232,6 +253,7 @@
     "section": "",
     "text": "Tracking is an essential component of analyzing time-lapse studies. Essentially, it involves detecting and labeling objects, frame-by-frame, and then linking the objects between frames. This way, objects can be followed over time. It provides insight into dynamic processes, such as cell migration & cell fate, as well as organelle dynamics.\n\n\n\n\n\n\nTools for tracking cells and particles\n\n\n\n\n\n\nFiji provides access to TrackMate, a well-established standout in terms of object and particle tracking. It provides a wide range of tracking algorithms, including simple linking, as well as more complex algorithms like the Linear Assignment Problem (LAP) tracking. TrackMate can interface with a wide range of segmentation or spot detection algorithms, so it be used for tracking cells, particles, and other objects in 2D and 3D images of various modalities. It also provides track visualization and analysis tools. For a helpful guide to getting started with TrackMate, see this Microcourse Youtube video.\nCellProfiler includes a TrackObjects module that can be used for tracking previously identified Objects over the course of a series of frames. It implements a number of different tracking methods, ranging from a simple overlap approach to LAP tracking. The module can provide a wide range of measurements, such as displacements, object lifetimes, and lineage information. For an example pipeline using TrackObjects, see the CellProfiler Examples.\nnapari provides a Tracks layer which can be useful for visualization of tracking data and has a number of tracking plugins available on the napari-hub. A few standouts include: btrack a Bayesian multi-object tracker and napari-trackastra a transformer-based cell tracker.\nultrack is a large-scale versatile cell tracking package that considers a set of multiple segmentation hypotheses and picks the segments that are most consistent over time, making it less susceptible to mistakes when traditional segmentation fails. it is available as a Python package that is also a napari plugin with a GUI widget. Additionally, ultrack provides a Fiji plugin which uses TrackMate for visualization.\n\n\n\n\n\n\n\nReuseCC BY 4.0",
     "crumbs": [
+      "About",
       "Common Tasks",
       "Tracking cells and particles"
     ]
@@ -250,6 +272,7 @@
     "section": "",
     "text": "Cellpose is a state-of-the-art generalist cell segmentation deep learning model, implemented in Python using torch. It provides a graphical user interface (GUI) segmenting cells and nuclei using different pre-trained models. Pre-trained models can be used with a wide range of cell types and imaging modalities, but the GUI also enables fine-tuning an existing model or training new models. With Cellpose 3.0 additional image restoration features are also available. However, installation requires a Python environment. Note: Cellpose has a Python API so it can also be accessed programmatically.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used specialized tools"
     ]
@@ -261,6 +284,7 @@
     "section": "",
     "text": "Cellpose is a state-of-the-art generalist cell segmentation deep learning model, implemented in Python using torch. It provides a graphical user interface (GUI) segmenting cells and nuclei using different pre-trained models. Pre-trained models can be used with a wide range of cell types and imaging modalities, but the GUI also enables fine-tuning an existing model or training new models. With Cellpose 3.0 additional image restoration features are also available. However, installation requires a Python environment. Note: Cellpose has a Python API so it can also be accessed programmatically.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used specialized tools"
     ]
@@ -272,6 +296,7 @@
     "section": "ilastik",
     "text": "ilastik\nilastik is a Python-based machine-learning-based pixel and object classification tool for multidimensional data. It provides a graphical user interface (GUI) application for Linux, macOS, and Windows that provides access to various segmentation and object classification workflows, as well as a tracking workflow. In addition to giving access to pre-trained models, the GUI also enables training classifiers, as well as batch processing. Note: in addition to a stand-alone GUI application, a number of ilastik plugins are available for other software package, for example for Fiji and napari.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used specialized tools"
     ]
@@ -283,6 +308,7 @@
     "section": "Paintera",
     "text": "Paintera\nPaintera is a dedicated annotation tool that was designed for performant annotation of large 3D datasets, thanks to multiscale rendering. It provides orthogonal views but also permits painting planes of structures that are not aligned with the actual imaging planes, such as neurons. It is possible to easily fill contours to quickly annotate areas and, importantly, annotations in multiple slices can be interpolated into 3D volumetric annotations. Finally, it can generate 3D meshes of labels to aid with visualization. For an in-depth video tutorial, see this YouTube video.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used specialized tools"
     ]
@@ -294,6 +320,7 @@
     "section": "Finding more tools",
     "text": "Finding more tools\n\nFor a more in-depth curated, categorized listing of open source bioimage analysis tools, see this awesome list.\n \nThe BioImage Informatics Index (Biii), also called “BISE” is a community-curated search engine for finding bioimage analysis software tools, workflows, and training materials.",
     "crumbs": [
+      "About",
       "Tools",
       "Commonly used specialized tools"
     ]
