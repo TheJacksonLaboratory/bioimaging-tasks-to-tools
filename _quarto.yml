@@ -21,9 +21,12 @@ website:
   open-graph: true
   bread-crumbs: false
   navbar:
-    pinned: true
+    pinned: false
     tools-collapse: true
+    background: "primary"
     right:
+      - text: "About"
+        href: about.md
       - icon: github
         href: https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools
         aria-label: GitHub repository
