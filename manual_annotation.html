@@ -392,8 +392,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#general-2d-images" id="toc-general-2d-images" class="nav-link active" data-scroll-target="#general-2d-images">General 2D images</a></li>
+  <li><a href="#tools-for-general-manual-annotations-of-2d-images" id="toc-tools-for-general-manual-annotations-of-2d-images" class="nav-link" data-scroll-target="#tools-for-general-manual-annotations-of-2d-images">Tools for general manual annotations of 2D images</a></li>
   <li><a href="#large-2d-and-multiscale-images" id="toc-large-2d-and-multiscale-images" class="nav-link" data-scroll-target="#large-2d-and-multiscale-images">Large 2D and multiscale images</a></li>
+  <li><a href="#tools-for-annotating-large-multiscale-pyramidal-images" id="toc-tools-for-annotating-large-multiscale-pyramidal-images" class="nav-link" data-scroll-target="#tools-for-annotating-large-multiscale-pyramidal-images">Tools for annotating large, multiscale (pyramidal) images</a></li>
   <li><a href="#d-images" id="toc-d-images" class="nav-link" data-scroll-target="#d-images">3D images</a></li>
+  <li><a href="#tools-for-annotating-3d-images" id="toc-tools-for-annotating-3d-images" class="nav-link" data-scroll-target="#tools-for-annotating-3d-images">Tools for annotating 3D images</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/blob/main/manual_annotation.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/edit/main/manual_annotation.md" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/TheJacksonLaboratory/bioimaging-tasks-to-tools/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -428,31 +431,62 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Manual annotation of images can be an important image analysis step, for example to indicate regions of interest (ROI) for further analysis or to provide ground-truth for training machine learning (ML) models. Examples include marking tumor regions in a histopathology image, indicating cell nuclei in a fluorescence image, or outlining neurons in an electron microscopy image. Annotations can include:</p>
 <ul>
-<li><code>labels</code>, used to assign every pixel of an object to a class or category</li>
-<li><code>bounding boxes</code>, used to indicate the location and size of an object</li>
-<li><code>polygons</code>, (even if drawn free-hand) used to outline ROIs</li>
-<li><code>points</code>, used to mark specific coordinates</li>
+<li><strong>labels</strong>, used to assign every pixel of an object to a class or category</li>
+<li><strong>bounding boxes</strong>, used to indicate the location and size of an object</li>
+<li><strong>polygons</strong>, (even if drawn free-hand) used to outline ROIs</li>
+<li><strong>points</strong>, used to mark specific coordinates</li>
 </ul>
 <section id="general-2d-images" class="level2">
 <h2 class="anchored" data-anchor-id="general-2d-images">General 2D images</h2>
 <p>Annotating 2D images is a common task and there are many tools available for images that are 2D (or 2D planes of 3D images) and do not exceed typical memory limits of a desktop computer. Here we highlight three popular tools that can be used for this purpose.</p>
+</section>
+<section id="tools-for-general-manual-annotations-of-2d-images" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-general-manual-annotations-of-2d-images">Tools for general manual annotations of 2D images</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tools for general manual annotations of 2D images
+OMERO.iviewer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li><p><a href="./generalist_tools.html#omeroiviewer">OMERO.iviewer</a> can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the <a href="https://omero-guides.readthedocs.io/en/latest/iviewer/docs/iviewer_rois.html">OMERO.iviewer ROI documentation</a>. A brief video tutorial of the main features is available from the <a href="https://www.youtube.com/watch?v=xshaOwmoqe0&amp;">I2K2020 OMERO iviewer workshop</a>.</p></li>
-<li><p><a href="./generalist_tools.html#fiji">Fiji</a> provides basic, flexible tools for marking regions of interest and an ROI manager for browsing and saving the regions (a dedicated file format is used). Built-in <a href="https://imagej.net/ij/docs/guide/146-30.html#sub:Set-Measurements...">Measurements functionality</a> allows getting shape and intensity measurements for marked regions. Finally, the plugin ecosystem also provides additional annotation tools, for example <a href="https://imagej.net/plugins/annotatorj">AnnotatorJ</a>, which enables instance and semantic object annotations, as well as bounding box annotations.</p></li>
-<li><p><a href="./generalist_tools.html#napari">napari</a> provides a Labels layer that enables “painting” over objects/regions in an image to annotate those regions into different classes indicated by different integer values (and colors). These annotations are saved as image files. Additionally, Points and Shapes layers can be used to mark coordinates of interest or indicate areas of interest. For these, the annotations are saved as data tables of coordinates. In addition to the built-in tools, the plugin ecosystem provides a large number of additional annotations tools (search <a href="https://napari-hub.org">the napari-hub</a>). However, napari is presently not well-suited for annotating multiscale images, such as whole slide scans.</p></li>
-</ul>
+<p><a href="./generalist_tools.html#omeroiviewer">OMERO.iviewer</a> can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the <a href="https://omero-guides.readthedocs.io/en/latest/iviewer/docs/iviewer_rois.html">OMERO.iviewer ROI documentation</a>. A brief video tutorial of the main features is available from the <a href="https://www.youtube.com/watch?v=xshaOwmoqe0&amp;">I2K2020 OMERO iviewer workshop</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fiji
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="./generalist_tools.html#fiji">Fiji</a> provides basic, flexible tools for marking regions of interest and an ROI manager for browsing and saving the regions (a dedicated file format is used). Built-in <a href="https://imagej.net/ij/docs/guide/146-30.html#sub:Set-Measurements...">Measurements functionality</a> allows getting shape and intensity measurements for marked regions. Finally, the plugin ecosystem also provides additional annotation tools, for example <a href="https://imagej.net/plugins/annotatorj">AnnotatorJ</a>, which enables instance and semantic object annotations, as well as bounding box annotations.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+napari
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="./generalist_tools.html#napari">napari</a> provides a Labels layer that enables “painting” over objects/regions in an image to assign those regions into different classes indicated by different integer values (and colors). These annotations are saved as image files. Additionally, Points and Shapes layers can be used to mark coordinates of interest or indicate areas of interest. For these, the annotations are saved as data tables of coordinates. In addition to the built-in tools, the plugin ecosystem provides a large number of additional annotations tools (search <a href="https://napari-hub.org">the napari-hub</a>). However, napari is presently not well-suited for annotating multiscale images, such as whole slide scans.</p>
 </div>
 </div>
 </div>
@@ -460,22 +494,38 @@ Tools for general manual annotations of 2D images
 <section id="large-2d-and-multiscale-images" class="level2">
 <h2 class="anchored" data-anchor-id="large-2d-and-multiscale-images">Large 2D and multiscale images</h2>
 <p>Annotating large images, which exceed available memory, or multiscale (pyramidal) images, such as whole slide scans, can be more challenging, as not all tools can handle these image types well. The following tools are well-suited for this purpose, but can also be used for general 2D images.</p>
+</section>
+<section id="tools-for-annotating-large-multiscale-pyramidal-images" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-annotating-large-multiscale-pyramidal-images">Tools for annotating large, multiscale (pyramidal) images</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tools for annotating large, multiscale (pyramidal) images
+OMERO.iviewer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li><p><a href="./generalist_tools.html#omeroiviewer">OMERO.iviewer</a> can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes, even for the case of very large or multiscale (pyramidal) images. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the <a href="https://omero-guides.readthedocs.io/en/latest/iviewer/docs/iviewer_rois.html">OMERO.iviewer ROI documentation</a>. A brief video tutorial of the main features is available from the <a href="https://www.youtube.com/watch?v=xshaOwmoqe0&amp;">I2K2020 OMERO iviewer workshop</a>.</p></li>
-<li><p><a href="./generalist_tools.html#qupath">QuPath</a> has robust 2D annotation tools for both free-form and polygonal annotations, as well as points. It is particularly well adapted for working with large, multiscale (pyramidal) images, such as whole slide images. It provides a “wand” tool that is zoom-aware and can enable rapid annotation of ROIs at different zoom levels. QuPath provides shape-based measurements (area, perimeter, length, etc.), but pixel intensity measurements can also be computed on-demand. Importantly, annotations can easily be assigned to classes, enabling them to be used for classification tasks. For a video tutorial of the annotation tools in QuPath, please see the <a href="https://www.youtube.com/watch?v=7QmSYZsyBOI">2023 Samples to Knowledge Annotation session</a>.</p></li>
-</ul>
+<p><a href="./generalist_tools.html#omeroiviewer">OMERO.iviewer</a> can be used for annotating images within the OMERO data management system. It permits performant annotation of ROIs for 2D images and planes, even for the case of very large or multiscale (pyramidal) images. Annotations can include points, arrows, lines, polylines, and polygons. Note that by holding down the Shift key, the polyline and polygon tools allow for drawing freehand annotations. Importantly, the annotations can also have attached comments and provide information regarding the area/length of the ROI. The ROI list is linked to the location of the ROI in the image, enabling easy navigation of annotations. Finally, the ROI table can be exported as a spreadsheet for further analysis. For more information, see the <a href="https://omero-guides.readthedocs.io/en/latest/iviewer/docs/iviewer_rois.html">OMERO.iviewer ROI documentation</a>. A brief video tutorial of the main features is available from the <a href="https://www.youtube.com/watch?v=xshaOwmoqe0&amp;">I2K2020 OMERO iviewer workshop</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+QuPath
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="./generalist_tools.html#qupath">QuPath</a> has robust 2D annotation tools for both free-form and polygonal annotations, as well as points. It is particularly well adapted for working with large, multiscale (pyramidal) images, such as whole slide images. It provides a “wand” tool that is zoom-aware and can enable rapid annotation of ROIs at different zoom levels. QuPath provides shape-based measurements (area, perimeter, length, etc.), but pixel intensity measurements can also be computed on-demand. Importantly, annotations can easily be assigned to classes, enabling them to be used for classification tasks. For a video tutorial of the annotation tools in QuPath, please see the <a href="https://www.youtube.com/watch?v=7QmSYZsyBOI">2023 Samples to Knowledge Annotation session</a>.</p>
 </div>
 </div>
 </div>
@@ -483,23 +533,54 @@ Tools for annotating large, multiscale (pyramidal) images
 <section id="d-images" class="level2">
 <h2 class="anchored" data-anchor-id="d-images">3D images</h2>
 <p>Annotating 3D images can be challenging, because of the limitations of the 2D screen and mouse. Using tools specialized for 2D, you typically have to annotate 3D images plane-by-plane, which is time consuming. However, 3D-centric tools can make things easier by allowing you to annotate using 3D “brushes”, by interpolating annotations between planes, or providing orthogonal and/or oblique planes for annotating. The following tools are well-suited for annotating 3D images.</p>
+</section>
+<section id="tools-for-annotating-3d-images" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-annotating-3d-images">Tools for annotating 3D images</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tools for annotating 3D images
+3D Slicer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li><p><a href="./generalist_tools.html#3d-slicer">3D Slicer</a> has a wide range of tools for annotating 3D images, including freehand and polygonal annotations, as well as points, available through the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/markups.html"><code>Markups</code></a> module. Importantly, these can have various measurements associated with them. 3D Slicer provides orthogonal views of the image, which can be used to annotate in 3D. Additionally, it has the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html"><code>Segment Editor</code></a> module that can be used for specifying segments (structures of interest) in 2D/3D/4D images. Additionally, the <code>Paint</code> tool has a sphere mode that is well-suited for annotating volumes. Further, <code>Grow from seeds</code> and <code>Fill between slices</code> can be used to more quickly segment objects in 3D. Finally, a number of extensions can be installed that provide more advanced tools for creating and/or editing segmentations, see <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html#segmentation-modules">the documentation</a>.</p></li>
-<li><p><a href="./specialist_tools.html#paintera">Paintera</a> enables performant annotation of large 3D datasets, thanks to multiscale rendering, and also handles multiscale label datasets. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes. This is particularly useful for labeling large, complex geometries, such as neurons. Further, it is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See <a href="https://www.youtube.com/watch?v=ZDcK0aCLoRc">this YouTube video</a> for an in-depth tutorial.</p></li>
-<li><p><a href="./generalist_tools.html#napari">napari</a> Labels layers can be 3D and labels can be viewed and edited in 3D mode—though the limitations of a 2D screen and mouse controls can make precise edits challenging. Additionally, while in 2D mode, the <code>n edit dim</code> parameter can permit simultaneously painting into adjacent slices based on the brush radius. Finally, there are plugins that can help facilitate 3D annotation, such as <a href="https://www.napari-hub.org/plugins/napari-nd-annotator.html">napari-nD-annotator</a>, which permits auto-filling labels and slice interpolation, and <a href="https://napari-threedee.github.io">napari-threedee</a> that enables using oblique rendering planes for annotation. However, napari is presently not well-suited for annotating multiscale images and 3D rendering depends on your GPU.</p></li>
-</ul>
+<p><a href="./generalist_tools.html#3d-slicer">3D Slicer</a> has a wide range of tools for annotating 3D images, including freehand and polygonal annotations, as well as points, available through the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/markups.html"><code>Markups</code></a> module. Importantly, these can have various measurements associated with them. 3D Slicer provides orthogonal views of the image, which can be used to annotate in 3D. Additionally, it has the <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html"><code>Segment Editor</code></a> module that can be used for specifying segments (structures of interest) in 2D/3D/4D images. Additionally, the <code>Paint</code> tool has a sphere mode that is well-suited for annotating volumes. Further, <code>Grow from seeds</code> and <code>Fill between slices</code> can be used to more quickly segment objects in 3D. Finally, a number of extensions can be installed that provide more advanced tools for creating and/or editing segmentations, see <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html#segmentation-modules">the documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Paintera
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="./specialist_tools.html#paintera">Paintera</a> enables performant annotation of large 3D datasets, thanks to multiscale rendering, and also handles multiscale label datasets. It provides orthogonal views but also, importantly, permits painting on planes that are not aligned with the actual imaging planes. This is particularly useful for labeling large, complex geometries, such as neurons. Further, it is possible to easily fill contours to quickly annotate areas and annotations of slices can be interpolated into volumes. See <a href="https://www.youtube.com/watch?v=ZDcK0aCLoRc">this YouTube video</a> for an in-depth tutorial.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+napari
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="./generalist_tools.html#napari">napari</a> Labels layers can be 3D and labels can be viewed and edited in 3D mode—though the limitations of a 2D screen and mouse controls can make precise edits challenging. Additionally, while in 2D mode, the <code>n edit dim</code> parameter can permit simultaneously painting into adjacent slices based on the brush radius. Finally, there are plugins that can help facilitate 3D annotation, such as <a href="https://www.napari-hub.org/plugins/napari-nd-annotator.html">napari-nD-annotator</a>, which permits auto-filling labels and slice interpolation, and <a href="https://napari-threedee.github.io">napari-threedee</a> that enables using oblique rendering planes for annotation. However, napari is presently not well-suited for annotating multiscale images and 3D rendering depends on your GPU.</p>
 </div>
 </div>
 </div>
