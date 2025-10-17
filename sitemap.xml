@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/segmentation.html</loc>
-    <lastmod>2025-07-25T14:14:39.847Z</lastmod>
+    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/index.html</loc>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/manual_annotation.html</loc>
-    <lastmod>2025-07-25T14:14:39.846Z</lastmod>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/colocalization.html</loc>
-    <lastmod>2025-07-25T14:14:39.846Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/generalist_tools.html</loc>
-    <lastmod>2025-07-25T14:14:39.846Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/index.html</loc>
-    <lastmod>2025-07-25T14:14:39.846Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/about.html</loc>
-    <lastmod>2025-07-25T14:14:39.846Z</lastmod>
-  </url>
-  <url>
-    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/tracking.html</loc>
-    <lastmod>2025-07-25T14:14:39.847Z</lastmod>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/toc.html</loc>
-    <lastmod>2025-07-25T14:14:39.847Z</lastmod>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/generalist_tools.html</loc>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
   </url>
   <url>
     <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/specialist_tools.html</loc>
-    <lastmod>2025-07-25T14:14:39.847Z</lastmod>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/about.html</loc>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/tracking.html</loc>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://TheJacksonLaboratory.github.io/bioimaging-tasks-to-tools/segmentation.html</loc>
+    <lastmod>2025-10-17T17:43:13.829Z</lastmod>
   </url>
 </urlset>
