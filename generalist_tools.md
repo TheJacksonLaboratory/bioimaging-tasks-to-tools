@@ -33,5 +33,5 @@ title: "Commonly used generalist tools"
 ## Finding more tools
 
 - For a more in-depth curated, categorized listing of open source bioimage analysis tools, see this [`awesome` list](https://github.com/hallvaaw/awesome-biological-image-analysis#awesome-biological-image-analysis-).  
-&nbsp;
+- For a curated list of scientific image analysis resources and software tools, see this [`awesome` list](https://github.com/EPFL-Center-for-Imaging/awesome-scientific-image-analysis).  
 - The [BioImage Informatics Index (Biii)](https://biii.eu), also called "BISE" is a community-curated search engine for finding bioimage analysis software tools, workflows, and training materials.
